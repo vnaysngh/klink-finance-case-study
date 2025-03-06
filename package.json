@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.20",
     "ethers": "^6.13.5",
     "framer-motion": "^12.4.10",
     "lottie-react": "^2.4.1",
