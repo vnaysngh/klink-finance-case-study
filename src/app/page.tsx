@@ -9,7 +9,8 @@ import Aerodrome from "@/assets/logos/aerodome.svg";
 import Uniswap from "@/assets/logos/uniswap.svg";
 import Klink from "@/assets/logos/klink.png";
 import Certik from "@/assets/logos/certik.svg";
-import InvestorsSection from "./[homepage]/partners";
+import InvestorsSection from "../components/Homepage/TrustedBy";
+import TrustedByTheBest from "../components/Homepage/Backed";
 
 export default function Hero() {
   return (
@@ -93,9 +94,9 @@ export default function Hero() {
           </div>
         </div>
       </section>
-      <section>
-        <InvestorsSection />
-      </section>
+      <TrustedByTheBest />
+
+      <InvestorsSection />
     </>
   );
 }
