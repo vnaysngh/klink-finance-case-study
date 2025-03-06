@@ -7,44 +7,29 @@ import Mexc from "@/assets/logos/mexc.svg";
 import Gecko from "@/assets/logos/gecko.svg";
 import Aerodrome from "@/assets/logos/aerodome.svg";
 import Uniswap from "@/assets/logos/uniswap.svg";
-import Klink from "@/assets/logos/klink.png";
 import Certik from "@/assets/logos/certik.svg";
 import InvestorsSection from "../components/Homepage/TrustedBy";
 import TrustedByTheBest from "../components/Homepage/Backed";
+import Header from "@/layout/Header";
 
 export default function Hero() {
   return (
     <>
       <section>
-        <header className="mx-auto flex items-center justify-between rounded-4xl bg-white px-6 py-6">
-          <div className="text-2xl font-bold text-white">
-            <Image src={Klink} alt="Klink Finance" />
-          </div>
-          {/* <nav className="space-x-6">
-              <Link href="/" className="text-gray-300 hover:text-white">
-                Home
-              </Link>
-              <Link href="/buy" className="text-gray-300 hover:text-white">
-                Buy SKLINK
-              </Link>
-              <Link href="/stake" className="text-gray-300 hover:text-white">
-                Stake SKLINK
-              </Link>
-            </nav> */}
-        </header>
-        <div className="bg-primary relative z-[999] min-h-screen overflow-hidden rounded-4xl px-12 py-6 text-white md:py-12 lg:min-h-[80vh]">
-          <div className="mx-auto flex flex-col items-center justify-between px-6 py-12 lg:flex-row">
+        <Header />
+
+        <div className="bg-primary relative z-[999] min-h-screen overflow-hidden rounded-tl-4xl rounded-b-4xl pb-6 text-white md:pb-12 lg:min-h-[80vh]">
+          <div className="spx-6 mx-auto flex flex-col items-center justify-between py-12 lg:flex-row lg:px-12">
             <div className="text-center lg:w-1/2 lg:text-left">
-              <h1 className="mb-6 text-4xl font-semibold tracking-[-1px] md:text-7xl">
+              <h1 className="mb-6 text-4xl font-semibold tracking-[-1px] sm:text-4xl md:text-7xl">
                 <div className="text-klink-purple">$KLINK</div>
                 The AI-powered infrastructure for Web3 earnings
               </h1>
-              <div className="flex gap-4">
-                <button className="rounded-full border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-6 py-3 text-base font-semibold text-white shadow-[inset_0px_1.15px_20.39px_0px_#FFFFFF6E] transition-all hover:from-purple-600 hover:to-purple-400">
+              <div className="flex justify-center gap-2 md:justify-start md:gap-4">
+                <button className="rounded-full border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-4 py-2 text-base font-semibold text-white shadow-[inset_0px_1.15px_20.39px_0px_#FFFFFF6E] transition-all hover:from-purple-600 hover:to-purple-400 md:px-6 md:py-4">
                   Buy $KLINK
                 </button>
-
-                <button className="hover:bg-opacity-20 rounded-full border border-[#9A8AFE80] px-6 py-3 text-base font-semibold text-white transition-all hover:bg-purple-500">
+                <button className="hover:bg-opacity-20 rounded-full border border-[#9A8AFE80] px-4 py-2 text-base font-semibold text-white transition-all hover:bg-purple-500 md:px-6 md:py-4">
                   Stake $KLINK
                 </button>
               </div>
@@ -94,7 +79,7 @@ export default function Hero() {
             </div>
           </div>
           <video
-            className="absolute right-[-25%] bottom-[-50%] z-[-1] mx-auto w-full max-w-6xl rounded-lg shadow-lg"
+            className="absolute right-[-25%] bottom-[-50%] z-[-1] mx-auto w-full max-w-6xl rounded-br-4xl shadow-lg"
             autoPlay
             loop
             muted
