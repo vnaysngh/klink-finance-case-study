@@ -16,12 +16,11 @@ export default function Hero() {
   return (
     <>
       <section>
-        <div className="bg-primary min-h-screen rounded-4xl px-12 py-6 text-white md:py-12 lg:min-h-[80vh]">
-          <header className="mx-auto flex items-center justify-between rounded-4xl bg-white px-6 py-6">
-            <div className="text-2xl font-bold text-white">
-              <Image src={Klink} alt="Klink Finance" />
-            </div>
-            {/* <nav className="space-x-6">
+        <header className="mx-auto flex items-center justify-between rounded-4xl bg-white px-6 py-6">
+          <div className="text-2xl font-bold text-white">
+            <Image src={Klink} alt="Klink Finance" />
+          </div>
+          {/* <nav className="space-x-6">
               <Link href="/" className="text-gray-300 hover:text-white">
                 Home
               </Link>
@@ -32,18 +31,20 @@ export default function Hero() {
                 Stake SKLINK
               </Link>
             </nav> */}
-          </header>
+        </header>
+        <div className="bg-primary relative z-[999] min-h-screen overflow-hidden rounded-4xl px-12 py-6 text-white md:py-12 lg:min-h-[80vh]">
           <div className="mx-auto flex flex-col items-center justify-between px-6 py-12 lg:flex-row">
             <div className="text-center lg:w-1/2 lg:text-left">
-              <h1 className="mb-6 text-4xl font-semibold md:text-7xl">
+              <h1 className="mb-6 text-4xl font-semibold tracking-[-1px] md:text-7xl">
+                <div className="text-klink-purple">$KLINK</div>
                 The AI-powered infrastructure for Web3 earnings
               </h1>
               <div className="flex gap-4">
-                <button className="rounded-full bg-gradient-to-r from-purple-500 to-purple-300 px-6 py-2 font-semibold text-white transition-all hover:from-purple-600 hover:to-purple-400">
+                <button className="rounded-full border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-6 py-3 text-base font-semibold text-white shadow-[inset_0px_1.15px_20.39px_0px_#FFFFFF6E] transition-all hover:from-purple-600 hover:to-purple-400">
                   Buy $KLINK
                 </button>
 
-                <button className="hover:bg-opacity-20 rounded-full border border-purple-500 px-6 py-2 font-semibold text-white transition-all hover:bg-purple-500">
+                <button className="hover:bg-opacity-20 rounded-full border border-[#9A8AFE80] px-6 py-3 text-base font-semibold text-white transition-all hover:bg-purple-500">
                   Stake $KLINK
                 </button>
               </div>
@@ -92,6 +93,19 @@ export default function Hero() {
               ))}
             </div>
           </div>
+          <video
+            className="absolute right-[-25%] bottom-[-50%] z-[-1] mx-auto w-full max-w-6xl rounded-lg shadow-lg"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src="https://klink-cdn.klink.finance/ecosystem/klink_coin.webm"
+              type="video/webm"
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
       <TrustedByTheBest />
