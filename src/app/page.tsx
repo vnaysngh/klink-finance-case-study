@@ -16,8 +16,8 @@ export default function Hero() {
   return (
     <>
       <section>
-        <div className="min-h-screen lg:min-h-[80vh] px-12 text-white bg-primary rounded-4xl py-6 md:py-12">
-          <header className="mx-auto px-6 py-6 flex justify-between items-center bg-white rounded-4xl">
+        <div className="bg-primary min-h-screen rounded-4xl px-12 py-6 text-white md:py-12 lg:min-h-[80vh]">
+          <header className="mx-auto flex items-center justify-between rounded-4xl bg-white px-6 py-6">
             <div className="text-2xl font-bold text-white">
               <Image src={Klink} alt="Klink Finance" />
             </div>
@@ -33,28 +33,28 @@ export default function Hero() {
               </Link>
             </nav> */}
           </header>
-          <div className="mx-auto px-6 flex flex-col lg:flex-row items-center justify-between py-12">
-            <div className="lg:w-1/2 text-center lg:text-left">
-              <h1 className="text-4xl md:text-7xl font-semibold mb-6">
+          <div className="mx-auto flex flex-col items-center justify-between px-6 py-12 lg:flex-row">
+            <div className="text-center lg:w-1/2 lg:text-left">
+              <h1 className="mb-6 text-4xl font-semibold md:text-7xl">
                 The AI-powered infrastructure for Web3 earnings
               </h1>
               <div className="flex gap-4">
-                <button className="px-6 py-2 rounded-full text-white font-semibold bg-gradient-to-r from-purple-500 to-purple-300 hover:from-purple-600 hover:to-purple-400 transition-all">
+                <button className="rounded-full bg-gradient-to-r from-purple-500 to-purple-300 px-6 py-2 font-semibold text-white transition-all hover:from-purple-600 hover:to-purple-400">
                   Buy $KLINK
                 </button>
 
-                <button className="px-6 py-2 rounded-full text-white font-semibold border border-purple-500 hover:bg-purple-500 hover:bg-opacity-20 transition-all">
+                <button className="hover:bg-opacity-20 rounded-full border border-purple-500 px-6 py-2 font-semibold text-white transition-all hover:bg-purple-500">
                   Stake $KLINK
                 </button>
               </div>
             </div>
           </div>
-          <div className="mx-auto px-6 mt-12">
-            <p className="text-base mb-4 text-white text-opacity-70">
+          <div className="mx-auto mt-12 px-6">
+            <p className="text-opacity-70 mb-4 text-base text-white">
               Audited By
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="w-[152.16px] h-[53.31px] flex items-center justify-center bg-[#2E2746] border-2 border-[#362B4F] rounded-[16px] p-[10px] shadow-lg backdrop-blur-[130px]">
+              <div className="flex h-[53.31px] w-[152.16px] items-center justify-center rounded-[16px] border-2 border-[#362B4F] bg-[#2E2746] p-[10px] shadow-lg backdrop-blur-[130px]">
                 <Image
                   src={Certik}
                   alt="Exchange Logo"
@@ -64,8 +64,8 @@ export default function Hero() {
               {/* <div className="text-base">4vdfdncd08034309cd0</div> */}
             </div>
           </div>
-          <div className="mx-auto px-6 mt-12">
-            <p className="text-base mb-4 text-white text-opacity-70">
+          <div className="mx-auto mt-12 px-6">
+            <p className="text-opacity-70 mb-4 text-base text-white">
               $KLINK Listed On
             </p>
             <div className="flex flex-wrap gap-4">
@@ -77,11 +77,11 @@ export default function Hero() {
                 Uniswap,
                 Aerodrome,
                 Coinmarketcap,
-                Gecko
+                Gecko,
               ].map((logo, index) => (
                 <div
                   key={index}
-                  className="w-[152.16px] h-[53.31px] flex items-center justify-center bg-[#2E2746] border-2 border-[#362B4F] rounded-[16px] p-[10px] shadow-lg backdrop-blur-[130px]"
+                  className="flex h-[53.31px] w-[152.16px] items-center justify-center rounded-[16px] border-2 border-[#362B4F] bg-[#2E2746] p-[10px] shadow-lg backdrop-blur-[130px]"
                 >
                   <Image
                     src={logo}

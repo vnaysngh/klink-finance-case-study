@@ -11,7 +11,7 @@ const partners = [
   { icon: Wirex, name: "Wirex" },
   { icon: CryptoDotCom, name: "Crypto.com" },
   { icon: Revolut, name: "Revolut" },
-  { icon: Nexo, name: "Nexo" }
+  { icon: Nexo, name: "Nexo" },
 ];
 
 export default function PartnerGrid() {
@@ -25,7 +25,7 @@ export default function PartnerGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+            className="flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
           >
             <Image src={partner.icon} alt={partner.name} />
           </motion.div>

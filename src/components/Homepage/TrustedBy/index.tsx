@@ -15,40 +15,40 @@ const InvestorsSection = () => {
     { name: "CASTRUM CAPITAL", logo: Castrum },
     {
       name: "BLOCKCHAIN FOUNDERS FUND",
-      logo: Blockchain
+      logo: Blockchain,
     },
     { name: "SIGNUM CAPITAL", logo: Signum },
-    { name: "MASTER VENTURES", logo: MasterVentures }
+    { name: "MASTER VENTURES", logo: MasterVentures },
   ];
 
   const mediaPartners = [
     { name: "Coindesk", logo: Coindesk, readUrl: "#" },
     { name: "CoinTelegraph", logo: Cointelegraph, readUrl: "#" },
-    { name: "CoinMarketCap", logo: CoinMarketCap, readUrl: "#" }
+    { name: "CoinMarketCap", logo: CoinMarketCap, readUrl: "#" },
   ];
 
   const testimonials = [
     {
       logo: CoinMarketCap,
       text: 'Klink Finance is well-positioned to advance its mission of democratizing crypto wealth creation. These funds will be crucial to provide the necessary capital for Klinks expansion and ability to unlock new opportunities in the Web3 space. By 2025, Klink Finance aims to reach over 1 million registered users, or "Klinkers," utilizing the platform for their daily wealth management needs.',
-      readUrl: "#"
+      readUrl: "#",
     },
     {
       logo: Cointrust,
       text: "Through this collaboration, Klink Finance moves closer to its objective of becoming the premier platform for wealth generation in cryptocurrency and decentralized finance (DeFi). The user-friendly company simplifies Web3 accessibility, providing a direct gateway for individuals into the decentralized application (dApp) ecosystem. This is achieved through its affiliate quest portal, an airdrop center, and a token launch pool, all aimed at expanding user participation in online earning initiatives.",
-      readUrl: "#"
-    }
+      readUrl: "#",
+    },
   ];
 
   return (
-    <div className="bg-gradient-to-b bg-primary rounded-4xl my-12 text-white py-16 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto mb-48">
-        <div className="flex justify-between items-center mb-12">
-          <h2 className="text-7xl italic font-extrabold">
+    <div className="bg-primary my-12 rounded-4xl bg-gradient-to-b px-4 py-16 text-white md:px-8">
+      <div className="mx-auto mb-48 max-w-6xl">
+        <div className="mb-12 flex items-center justify-between">
+          <h2 className="text-7xl font-extrabold italic">
             Backed By <span className="text-purple-400">The Best</span>
           </h2>
           <div className="flex gap-2">
-            <button className="bg-gray-800 bg-opacity-50 p-2 rounded-full">
+            <button className="bg-opacity-50 rounded-full bg-gray-800 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -64,7 +64,7 @@ const InvestorsSection = () => {
                 />
               </svg>
             </button>
-            <button className="bg-gray-800 bg-opacity-50 p-2 rounded-full">
+            <button className="bg-opacity-50 rounded-full bg-gray-800 p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -83,12 +83,12 @@ const InvestorsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {investors.map((investor, index) => (
             <div key={index} className="flex items-center">
-              <div className="h-16 relative">
-                <div className="w-48 h-12">
-                  <div className="text-gray-300 font-semibold text-lg">
+              <div className="relative h-16">
+                <div className="h-12 w-48">
+                  <div className="text-lg font-semibold text-gray-300">
                     <Image
                       src={investor.logo}
                       alt={investor.name}
@@ -102,29 +102,29 @@ const InvestorsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto mb-20">
-        <div className="flex justify-between items-center mb-12">
-          <h2 className="text-7xl italic font-extrabold">
+      <div className="mx-auto mb-20 max-w-6xl">
+        <div className="mb-12 flex items-center justify-between">
+          <h2 className="text-7xl font-extrabold italic">
             Our <span className="text-purple-400">Media & Partners</span>
           </h2>
           <div className="flex gap-2">
-            <button className="bg-purple-900 px-4 py-2 rounded-full">
+            <button className="rounded-full bg-purple-900 px-4 py-2">
               Clients
             </button>
-            <button className="bg-purple-500 px-6 py-2 rounded-full">
+            <button className="rounded-full bg-purple-500 px-6 py-2">
               Press
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           {mediaPartners.map((partner, index) => (
             <div
               key={index}
-              className="bg-gradient-to-b border-0 rounded-[25px] p-[30px] flex flex-col w-[361px] h-[164px] border-gradient-to-b from-[#9C78ED20] to-[#9C78ED10] shadow-lg backdrop-blur-[130px]"
+              className="border-gradient-to-b flex h-[164px] w-[361px] flex-col rounded-[25px] border-0 bg-gradient-to-b from-[#9C78ED20] to-[#9C78ED10] p-[30px] shadow-lg backdrop-blur-[130px]"
             >
-              <div className="h-8 mb-auto">
-                <div className="text-4xl text-gray-300 font-semibold">
+              <div className="mb-auto h-8">
+                <div className="text-4xl font-semibold text-gray-300">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
@@ -134,12 +134,12 @@ const InvestorsSection = () => {
               </div>
               <Link
                 href={partner.readUrl}
-                className="flex items-center text-base text-purple-400 mt-4 w-fit px-5 py-1 rounded-3xl border-1 border-border "
+                className="border-border mt-4 flex w-fit items-center rounded-3xl border-1 px-5 py-1 text-base text-purple-400"
               >
                 Read
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
+                  className="ml-1 h-4 w-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -156,24 +156,24 @@ const InvestorsSection = () => {
           ))}
         </div>
 
-        <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="border-0  border-gradient-to-b bg-gradient-to-b from-[#9C78ED20] to-[#9C78ED10] shadow-lg backdrop-blur-[130px]  bg-opacity-30 rounded-2xl p-8 flex flex-col"
+              className="border-gradient-to-b bg-opacity-30 flex flex-col rounded-2xl border-0 bg-gradient-to-b from-[#9C78ED20] to-[#9C78ED10] p-8 shadow-lg backdrop-blur-[130px]"
             >
-              <div className="absolute inset-0 border-[5px] rounded-[40px] border-transparent p-[5px]">
+              <div className="absolute inset-0 rounded-[40px] border-[5px] border-transparent p-[5px]">
                 {/* <div className="h-full w-full rounded-[35px] bg-white bg-clip-padding border-[5px] border-transparent bg-gradient-to-b from-[#9C78ED33] to-[#9C78ED1A]"></div> */}
               </div>
 
               <div className="relative text-6xl text-[#9C78ED]">“</div>
 
-              <p className="relative text-white leading-relaxed italic text-base">
+              <p className="relative text-base leading-relaxed text-white italic">
                 {testimonial.text}
               </p>
 
-              <div className="relative flex flex-col gap-4 my-6">
-                <div className="flex items-center gap-2 text-purple-400 text-lg font-semibold ">
+              <div className="relative my-6 flex flex-col gap-4">
+                <div className="flex items-center gap-2 text-lg font-semibold text-purple-400">
                   <Image
                     src={testimonial.logo}
                     alt="CoinMarketCap"
@@ -183,12 +183,12 @@ const InvestorsSection = () => {
                 </div>
                 <Link
                   href="#"
-                  className="flex items-center text-base text-purple-400 mt-4 w-fit px-5 py-1 rounded-3xl border-1 border-border "
+                  className="border-border mt-4 flex w-fit items-center rounded-3xl border-1 px-5 py-1 text-base text-purple-400"
                 >
                   Read
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 ml-2"
+                    className="ml-2 h-4 w-4"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -207,8 +207,8 @@ const InvestorsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto">
-        <h2 className="mb-12 text-7xl italic font-extrabold">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="mb-12 text-7xl font-extrabold italic">
           Join The{" "}
           <span className="text-purple-400">
             Klink
@@ -217,36 +217,36 @@ const InvestorsSection = () => {
           </span>
         </h2>
 
-        <div className="flex items-center justify-between w-full">
-          <h2 className="text-white text-2xl whitespace-nowrap font-extrabold">
+        <div className="flex w-full items-center justify-between">
+          <h2 className="text-2xl font-extrabold whitespace-nowrap text-white">
             Official Channels
           </h2>
 
           <div className="flex gap-3">
             <a
               href="#"
-              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-full bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] border border-[#ffffff1a] text-white hover:opacity-80 transition"
+              className="flex items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
               Twitter <span className="text-purple-400">250k</span>
             </a>
 
             <a
               href="#"
-              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-full bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] border border-[#ffffff1a] text-white hover:opacity-80 transition"
+              className="flex items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
               Telegram <span className="text-purple-400">350k</span>
             </a>
 
             <a
               href="#"
-              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-full bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] border border-[#ffffff1a] text-white hover:opacity-80 transition"
+              className="flex items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
               Discord <span className="text-purple-400">100k</span>
             </a>
 
             <a
               href="#"
-              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-full bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] border border-[#ffffff1a] text-white hover:opacity-80 transition"
+              className="flex items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
               Link3
             </a>

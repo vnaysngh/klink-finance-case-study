@@ -5,16 +5,16 @@ import "./globals.css";
 // Configure Inter font
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: "Klink Finance",
-  description: "Klink Finance Case Study"
+  description: "Klink Finance Case Study",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {

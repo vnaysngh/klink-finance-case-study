@@ -41,11 +41,11 @@ const StatItem = ({ value, label, suffix = "" }: StatItemProps) => {
       transition={{ duration: 0.6 }}
       className="text-center"
     >
-      <div className="text-4xl md:text-7xl mb-2">
+      <div className="mb-2 text-4xl md:text-7xl">
         {count.toLocaleString()}
         {suffix}
       </div>
-      <div className="text-xl text-klink-purple text-muted-foreground ">
+      <div className="text-klink-purple text-muted-foreground text-xl">
         {label}
       </div>
     </motion.div>
@@ -54,7 +54,7 @@ const StatItem = ({ value, label, suffix = "" }: StatItemProps) => {
 
 export default function StatCounter() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 my-32 py-20 ">
+    <div className="my-32 grid grid-cols-2 gap-8 py-20 md:grid-cols-4 md:gap-12">
       <StatItem value={500} label="Users Across 127+ Countries" suffix="K" />
       <StatItem value={120} label="Affiliate Partners" suffix="+" />
       <StatItem value={10} label="Airdrops to Date" suffix="+" />
