@@ -63,7 +63,7 @@ export default function Hero() {
       </section>
       <TrustedByTheBest />
 
-      <InvestorsSection />
+      {/* <InvestorsSection /> */}
     </>
   );
 }

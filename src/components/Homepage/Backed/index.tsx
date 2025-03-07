@@ -11,13 +11,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <PartnerGrid />
 
-        <section>
-          <StatCounter />
-          <Mission />
-        </section>
+        <StatCounter />
+        <Mission />
       </div>
     </div>
   );
