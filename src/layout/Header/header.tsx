@@ -3,6 +3,8 @@ import Link from "next/link";
 import KlinkLogo from "@/assets/logos/klink-logo.svg";
 import Image from "next/image";
 import { useState } from "react";
+import Wallet from "@/components/homepage/Wallet/wallet";
+import { Price } from "@/components/homepage/KlinkPrice/price";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,23 +54,13 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* SKLINK Price and Connect Wallet Button */}
           <div className="hidden items-center space-x-6 sm:flex">
-            {/* SKLINK Price */}
-            <div className="text-gray-300">
-              SKLINK = <span className="font-bold">$0.05</span>
-            </div>
-
-            {/* Connect Wallet Button */}
-            <button className="rounded-full bg-white px-6 py-2 font-semibold text-blue-900 transition-colors hover:bg-gray-100">
-              Connect Wallet
-            </button>
+            <Price />
+            <Wallet />
           </div>
-          {/* Diagonal Partition */}
           <div className="bg-primary border-b-primary absolute top-0 left-0 z-20 h-0 w-0 border-b-[80px] border-l-[40px] border-l-white"></div>
         </div>
       </div>
-      {/* Mobile Menu (Dropdown) */}
       {isMenuOpen && (
         <div className="absolute top-20 right-0 left-0 z-[99999] bg-blue-900 p-4 sm:hidden">
           <nav className="flex flex-col space-y-4">

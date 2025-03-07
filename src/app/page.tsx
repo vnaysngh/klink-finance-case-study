@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Certik from "@/assets/logos/certik.svg";
-import InvestorsSection from "../components/Homepage/TrustedBy";
-import TrustedByTheBest from "../components/Homepage/Backed";
-import Header from "@/layout/Header";
+import InvestorsSection from "../components/homepage/TrustedBy";
+import TrustedByTheBest from "../components/homepage/Backed";
+import Header from "@/layout/Header/header";
 import ListedOnSwiper from "@/components/ui/swiper";
-
 export default function Hero() {
   return (
     <>
@@ -14,7 +13,7 @@ export default function Hero() {
 
           <div className="mx-auto flex flex-col items-center justify-between px-6 py-12 sm:flex-row sm:px-12">
             <div className="text-center sm:w-1/2 sm:text-left">
-              <h1 className="mb-6 text-4xl font-semibold tracking-[-1px] sm:text-4xl sm:text-7xl">
+              <h1 className="mb-6 text-4xl font-semibold tracking-[-1px] sm:text-7xl">
                 <div className="text-klink-purple">$KLINK</div>
                 The AI-powered infrastructure for Web3 earnings
               </h1>
