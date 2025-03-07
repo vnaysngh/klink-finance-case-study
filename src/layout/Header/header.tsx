@@ -10,18 +10,19 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative">
+    <header>
       <div className="mx-auto flex items-center">
-        {/* White Section (Logo) */}
-        <div className="relative z-10 flex h-20 items-center bg-white pr-10 pl-6">
+        <div className="relative z-10 flex h-20 items-center px-3 sm:pr-10 sm:pl-6">
           <Link href="/">
-            <Image src={KlinkLogo} alt="Klink Logo" />
+            <Image
+              src={KlinkLogo}
+              alt="Klink Logo"
+              className="h-7 w-auto sm:h-auto"
+            />
           </Link>
         </div>
 
-        {/* Blue Section (Navigation Links) */}
-        <div className="bg-primary relative flex h-20 flex-1 items-center justify-between rounded-tr-4xl pr-6 pl-16">
-          {/* Hamburger Menu (Mobile) */}
+        <div className="relative flex h-20 flex-1 items-center justify-between rounded-tr-4xl pr-6 pl-16">
           <button
             className="sm:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -58,7 +59,6 @@ export default function Header() {
             <Price />
             <Wallet />
           </div>
-          <div className="bg-primary border-b-primary absolute top-0 left-0 z-20 h-0 w-0 border-b-[80px] border-l-[40px] border-l-white"></div>
         </div>
       </div>
       {isMenuOpen && (

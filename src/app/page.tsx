@@ -4,11 +4,13 @@ import InvestorsSection from "../components/homepage/TrustedBy";
 import TrustedByTheBest from "../components/homepage/Backed";
 import Header from "@/layout/Header/header";
 import ListedOnSwiper from "@/components/ui/swiper";
+import { Copy } from "lucide-react";
+
 export default function Hero() {
   return (
     <>
       <section>
-        <div className="bg-primary relative z-[999] min-h-screen overflow-hidden rounded-4xl pb-6 text-white sm:min-h-[80vh] sm:pb-12">
+        <div className="relative z-[999] min-h-[120vh] overflow-hidden rounded-t-4xl rounded-b-4xl bg-[url('/assets/banner/mobile-hero.png')] bg-cover text-white sm:min-h-[80vh] sm:bg-[url('/assets/banner/hero.png')]">
           <Header />
 
           <div className="mx-auto flex flex-col items-center justify-between px-6 py-12 sm:flex-row sm:px-12">
@@ -27,25 +29,32 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-8 w-full sm:relative sm:bottom-5">
-            <div className="mx-auto mt-12 px-6 sm:px-12">
-              <p className="mb-4 text-base text-white opacity-70">Audited By</p>
+          <div className="absolute bottom-5 w-full sm:relative sm:bottom-5">
+            <div className="mx-auto mt-12 sm:px-12">
+              <p className="mb-4 text-center text-base text-white opacity-70 sm:text-left">
+                Audited By
+              </p>
               <div className="flex flex-wrap gap-4">
-                <div className="flex h-[53.31px] w-[152.16px] items-center justify-center rounded-[16px] border-2 border-[#362B4F] bg-[#2E2746] p-[10px] shadow-lg backdrop-blur-[130px]">
-                  <Image
-                    src={Certik}
-                    alt="Exchange Logo"
-                    className="object-contain"
-                  />
+                <div className="m-auto flex h-[53px] items-center overflow-hidden rounded-[16px] border-0 border-[#362B4F] bg-[#2E2746] shadow-lg backdrop-blur-[130px] sm:m-0">
+                  <div className="flex h-full w-1/2 items-center justify-center rounded-l-[14px] bg-[#2E2746] px-4">
+                    <Image
+                      src={Certik}
+                      alt="Certik Logo"
+                      className="h-6 w-auto"
+                    />
+                  </div>
+                  <div className="flex h-full w-1/2 items-center justify-center gap-2 bg-[#463964] px-4 text-sm text-[#A88CD9]">
+                    <span>0xSDAF...k87a</span>
+                    <Copy className="h-10 w-10 cursor-pointer" />
+                  </div>
                 </div>
-                {/* <div className="text-base">4vdfdncd08034309cd0</div> */}
               </div>
             </div>
             <ListedOnSwiper />
           </div>
 
           <video
-            className="absolute bottom-[-35%] z-[-1] mx-auto w-full max-w-6xl scale-175 overflow-hidden rounded-br-4xl shadow-lg sm:right-[-20%] sm:bottom-[-55%] sm:scale-100"
+            className="absolute bottom-[-5%] z-[-1] mx-auto w-full max-w-6xl scale-175 overflow-hidden rounded-br-4xl shadow-lg sm:right-[-20%] sm:bottom-[-55%] sm:scale-100"
             autoPlay
             loop
             muted
