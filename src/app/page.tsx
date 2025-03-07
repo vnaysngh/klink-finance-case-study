@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Certik from "@/assets/logos/certik.svg";
-import InvestorsSection from "../components/homepage/TrustedBy";
-import TrustedByTheBest from "../components/homepage/Backed";
-import Header from "@/layout/Header/header";
-import ListedOnSwiper from "@/components/ui/swiper";
+import InvestorsSection from "./components/homepage/TrustedBy";
+import TrustedByTheBest from "./components/homepage/Backed";
+import Header from "@/layouts/Header/header";
+import ListedOnSwiper from "./components/ui/swiper";
 import { Copy } from "lucide-react";
 
 export default function Hero() {

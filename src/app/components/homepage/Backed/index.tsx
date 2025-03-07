@@ -1,7 +1,7 @@
 "use client";
-import StatCounter from "@/components/homepage/Stats/StatsCounter";
-import PartnerGrid from "@/components/homepage/Partners/PartnerGrid";
-import Mission from "@/components/homepage/Mission/MissionGrid";
+import StatCounter from "@/app/components/homepage/Stats/StatsCounter";
+import PartnerGrid from "@/app/components/homepage/Partners/PartnerGrid";
+import Mission from "@/app/components/homepage/Mission/MissionGrid";
 export default function Home() {
   return (
     <div className="bg-background my-12 min-h-screen w-full py-12">
