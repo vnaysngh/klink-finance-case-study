@@ -27,8 +27,8 @@ const logos = [
 
 export default function ListedOnSwiper() {
   return (
-    <div className="mx-auto mt-12 px-3 lg:px-12">
-      <p className="mb-4 text-center text-base text-white opacity-70 md:text-left">
+    <div className="mx-auto mt-12 px-3 sm:px-12">
+      <p className="mb-4 text-center text-base text-white opacity-70 sm:text-left">
         $KLINK Listed On
       </p>
       <Swiper

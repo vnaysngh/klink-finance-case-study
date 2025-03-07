@@ -41,7 +41,7 @@ const InvestorsSection = () => {
   ];
 
   return (
-    <div className="bg-primary my-12 rounded-4xl bg-gradient-to-b px-4 py-16 text-white md:px-8">
+    <div className="bg-primary my-12 rounded-4xl bg-gradient-to-b px-4 py-16 text-white sm:px-8">
       <div className="mx-auto mb-48 max-w-6xl">
         <div className="mb-12 flex items-center justify-between">
           <h2 className="text-7xl font-extrabold italic">
@@ -83,7 +83,7 @@ const InvestorsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           {investors.map((investor, index) => (
             <div key={index} className="flex items-center">
               <div className="relative h-16">
@@ -117,13 +117,13 @@ const InvestorsSection = () => {
           </div>
         </div>
 
-        <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mb-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
           {mediaPartners.map((partner, index) => (
             <div
               key={index}
-              className="border-gradient-to-b flex h-[164px] w-[361px] flex-col rounded-[25px] border-0 bg-gradient-to-b from-[#9C78ED20] to-[#9C78ED10] p-[30px] shadow-lg backdrop-blur-[130px]"
+              className="border-gradient-to-b flex flex-col rounded-[25px] border-0 bg-gradient-to-b from-[#9C78ED20] to-[#9C78ED10] p-[30px] shadow-lg backdrop-blur-[130px]"
             >
-              <div className="mb-auto h-8">
+              <div className="mb-auto">
                 <div className="text-4xl font-semibold text-gray-300">
                   <Image
                     src={partner.logo}
@@ -156,7 +156,7 @@ const InvestorsSection = () => {
           ))}
         </div>
 
-        <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mb-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}

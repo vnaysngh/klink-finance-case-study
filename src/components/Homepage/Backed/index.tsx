@@ -14,7 +14,7 @@ export default function Home() {
       <div className="container mx-auto px-4">
         <PartnerGrid />
 
-        <section className="px-32">
+        <section>
           <StatCounter />
           <Mission />
         </section>

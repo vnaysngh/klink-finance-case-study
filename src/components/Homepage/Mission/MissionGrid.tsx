@@ -5,7 +5,7 @@ import Apps from "@/assets/logos/apps.png";
 export default function MissionSection() {
   return (
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -17,7 +17,7 @@ export default function MissionSection() {
             The Klink Mission
           </span>
 
-          <h2 className="mb-6 text-4xl leading-tight tracking-[-3px] md:text-5xl">
+          <h2 className="mb-6 text-4xl leading-tight tracking-[-3px] sm:text-5xl">
             Activating Millions of Web3 Users Through AI-Enabled Wealth Creation
             Technology
           </h2>

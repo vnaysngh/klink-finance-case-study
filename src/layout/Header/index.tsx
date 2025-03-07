@@ -21,7 +21,7 @@ export default function Header() {
         <div className="bg-primary relative flex h-20 flex-1 items-center justify-between rounded-tr-4xl pr-6 pl-16">
           {/* Hamburger Menu (Mobile) */}
           <button
-            className="md:hidden"
+            className="sm:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
@@ -40,7 +40,7 @@ export default function Header() {
           </button>
 
           {/* Navigation Links */}
-          <nav className="hidden space-x-6 md:flex">
+          <nav className="hidden space-x-6 sm:flex">
             <Link href="/" className="text-gray-300 hover:text-white">
               Home
             </Link>
@@ -53,7 +53,7 @@ export default function Header() {
           </nav>
 
           {/* SKLINK Price and Connect Wallet Button */}
-          <div className="hidden items-center space-x-6 md:flex">
+          <div className="hidden items-center space-x-6 sm:flex">
             {/* SKLINK Price */}
             <div className="text-gray-300">
               SKLINK = <span className="font-bold">$0.05</span>
@@ -70,7 +70,7 @@ export default function Header() {
       </div>
       {/* Mobile Menu (Dropdown) */}
       {isMenuOpen && (
-        <div className="absolute top-20 right-0 left-0 z-[99999] bg-blue-900 p-4 md:hidden">
+        <div className="absolute top-20 right-0 left-0 z-[99999] bg-blue-900 p-4 sm:hidden">
           <nav className="flex flex-col space-y-4">
             <Link href="/" className="text-gray-300 hover:text-white">
               Home
