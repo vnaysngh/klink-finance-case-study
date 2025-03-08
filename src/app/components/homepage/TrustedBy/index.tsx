@@ -58,7 +58,7 @@ const InvestorsSection = () => {
   ];
 
   return (
-    <div className="bg-primary my-12 rounded-4xl bg-gradient-to-b px-4 py-16 text-white sm:px-8">
+    <div className="bg-primary my-12 rounded-4xl bg-gradient-to-b px-4 py-16 text-white">
       <div className="mx-auto mb-20 max-w-6xl sm:mb-48">
         <div className="mb-12 hidden items-center justify-between sm:flex">
           <h2 className="text-left text-7xl font-extrabold italic">
