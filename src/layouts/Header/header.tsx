@@ -2,45 +2,93 @@
 import Link from "next/link";
 import KlinkLogo from "@/assets/logos/klink-logo.svg";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Wallet from "@/app/components/homepage/wallet/wallet";
 import { Price } from "@/app/components/homepage/klink-price/price";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useDragControls } from "framer-motion";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [address, setAddress] = useState("0x1a2...3b4c");
+  const [isConnected, setIsConnected] = useState(false);
+  const sheetRef = useRef(null);
+  const dragControls = useDragControls();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const connectWallet = () => {
+    setIsConnected(true);
+    setAddress("0x1a2...3b4c");
+  };
+
+  const disconnectWallet = () => {
+    setIsConnected(false);
+    setAddress("");
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (
+        sheetRef.current &&
+        !sheetRef.current.contains(event.target) &&
+        isMenuOpen
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const menuVariants = {
     closed: {
-      opacity: 0,
-      height: 0,
+      y: "100%",
+      opacity: 1,
       transition: {
-        duration: 0.3,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
         when: "afterChildren",
         staggerChildren: 0.05,
         staggerDirection: -1,
       },
     },
     open: {
+      y: 0,
       opacity: 1,
-      height: "auto",
       transition: {
-        duration: 0.3,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
         when: "beforeChildren",
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
         delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    closed: { opacity: 0, y: -10 },
+    closed: { opacity: 0, y: 20 },
     open: { opacity: 1, y: 0 },
   };
+
+  const NavLink = ({ href, label, onClick }: any) => (
+    <motion.div variants={itemVariants}>
+      <Link
+        href={href}
+        className="hover:bg-klink-purple flex flex-col items-center space-y-1 rounded-xl border border-gray-400 p-4 text-center transition-colors hover:text-white"
+        onClick={onClick}
+      >
+        <span className="text-sm font-medium text-black">{label}</span>
+      </Link>
+    </motion.div>
+  );
 
   return (
     <header className="relative">
@@ -57,13 +105,24 @@ export default function Header() {
 
         <div className="relative flex h-20 flex-1 items-center justify-between rounded-tr-4xl pr-6 pl-16">
           <div className="flex items-center space-x-3 sm:hidden">
-            {/*     <div className="mr-1">
-              <Wallet />
-            </div> */}
+            <div className="mr-1">
+              {isConnected ? (
+                <div className="bg-opacity-75 bg-klink-purple flex items-center space-x-2 rounded-full px-3 py-1.5 text-sm text-white backdrop-blur-sm">
+                  <span className="h-2 w-2 rounded-full bg-green-400"></span>
+                  <span>{address}</span>
+                </div>
+              ) : (
+                <button
+                  onClick={connectWallet}
+                  className="from-klink-purple rounded-full bg-gradient-to-r to-blue-700 px-4 py-1.5 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl"
+                >
+                  Connect
+                </button>
+              )}
+            </div>
 
-            {/* Hamburger Menu Button */}
             <button
-              className="relative z-30 flex h-10 w-10 items-center justify-center rounded-full bg-[#55468B4D] text-gray-200 focus:outline-none"
+              className="bg-opacity-75 relative z-30 flex h-10 w-10 items-center justify-center rounded-full bg-[#55468B4D] text-gray-200 backdrop-blur-sm focus:outline-none"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
@@ -116,63 +175,113 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.6 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-opacity-50 fixed inset-0 z-20 bg-black backdrop-blur-sm sm:hidden"
+            className="fixed inset-0 z-10 bg-black backdrop-blur-sm sm:hidden"
             onClick={toggleMenu}
           />
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="bg-klink-purple to-[#714EBD]; w-4.5/5 absolute top-0 right-0 z-20 overflow-hidden rounded-l-2xl bg-gradient-to-b from-[#674EFF] shadow-xl sm:hidden"
+            ref={sheetRef}
+            className="fixed right-0 bottom-0 left-0 z-9999 overflow-hidden rounded-t-2xl bg-white shadow-2xl sm:hidden"
             initial="closed"
             animate="open"
             exit="closed"
             variants={menuVariants}
+            drag="y"
+            dragControls={dragControls}
+            dragConstraints={{ top: 0, bottom: 0 }}
+            dragElastic={0.2}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 30 }}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipeThreshold = 100;
+              if (offset.y > swipeThreshold || velocity.y > 300) {
+                setIsMenuOpen(false);
+              }
+            }}
           >
             <div className="p-6">
-              <nav className="mb-8 border-b pb-6">
-                <motion.div className="mb-4" variants={itemVariants}>
-                  <Link
-                    href="/"
-                    className="block py-2 text-lg font-medium text-white"
-                    onClick={toggleMenu}
-                  >
-                    Home
-                  </Link>
-                </motion.div>
-                <motion.div className="mb-4" variants={itemVariants}>
-                  <Link
-                    href="/buy"
-                    className="block py-2 text-lg font-medium text-white"
-                    onClick={toggleMenu}
-                  >
-                    Buy SKLINK
-                  </Link>
-                </motion.div>
-                <motion.div className="mb-4" variants={itemVariants}>
-                  <Link
-                    href="/stake"
-                    className="block py-2 text-lg font-medium text-white"
-                    onClick={toggleMenu}
-                  >
-                    Stake SKLINK
-                  </Link>
-                </motion.div>
-              </nav>
+              <div
+                className="mb-6 flex justify-center"
+                onPointerDown={(e) => dragControls.start(e)}
+              >
+                <div className="h-1 w-16 rounded-full bg-gray-500 transition-colors hover:bg-gray-400"></div>
+              </div>
 
-              <motion.div variants={itemVariants} className="rounded-xl">
-                <Price />
+              <motion.div
+                variants={itemVariants}
+                className="mb-6 rounded-xl border-[#9A8AFE] bg-[#1E1E30] p-4 backdrop-blur-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-gray-300">Current Price</p>
+                    <p className="text-2xl font-bold">
+                      SKLINK = <span className="text-klink-purple">$0.05</span>
+                    </p>
+                  </div>
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    animate={{ scale: 1 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      duration: 1.5,
+                    }}
+                    className="bg-opacity-20 rounded-full bg-green-500 p-2"
+                  >
+                    <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-green-500 to-green-400 p-2">
+                      +12.5%
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Navigation grid */}
+              <motion.div variants={itemVariants} className="mb-6">
+                <div className="grid grid-cols-3 gap-2">
+                  <NavLink href="/" label="Home" onClick={toggleMenu} />
+                  <NavLink href="/buy" label="Buy" onClick={toggleMenu} />
+                  <NavLink href="/stake" label="Stake" onClick={toggleMenu} />
+                </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="mb-4">
+                {!isConnected ? (
+                  <button
+                    onClick={connectWallet}
+                    className="w-full rounded-xl border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-6 py-4 font-semibold shadow-lg transition-all hover:shadow-xl active:translate-y-0.5"
+                  >
+                    Connect Wallet
+                  </button>
+                ) : (
+                  <div className="bg-opacity-40 bg-klink-purple rounded-xl p-4 backdrop-blur-sm">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-gray-300">
+                          Connected Wallet
+                        </p>
+                        <p className="font-mono text-lg font-medium text-white">
+                          {address}
+                        </p>
+                      </div>
+                      <button
+                        onClick={disconnectWallet}
+                        className="bg-opacity-50 rounded-lg bg-blue-700 px-3 py-1 text-sm text-white hover:bg-blue-700"
+                      >
+                        Disconnect
+                      </button>
+                    </div>
+                  </div>
+                )}
               </motion.div>
             </div>
           </motion.div>
