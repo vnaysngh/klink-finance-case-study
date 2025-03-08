@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="mx-auto flex items-center">
+      <div className="relative z-20 mx-auto flex items-center">
         <div className="relative z-10 flex h-20 items-center px-3 sm:pr-10 sm:pl-6">
           <Link href="/">
             <Image
