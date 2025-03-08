@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Certik from "@/assets/logos/certik.svg";
 import Ellipse from "@/assets/banner/ellipse.svg";
+import MobileImage from "@/assets/banner/mobile-hero-image.png";
 import Header from "@/layouts/Header/header";
-import { Copy } from "lucide-react";
 import ListedOnSwiper from "../../ui/swiper";
-
 import React from "react";
+import { ContractAddress } from "../contract-address/contract";
 
 const Hero = () => {
   return (
@@ -29,7 +29,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 w-full sm:relative sm:bottom-5">
+        <div className="absolute bottom-10 z-50 w-full sm:relative sm:bottom-5">
           <div className="mx-auto mt-12 sm:px-12">
             <p className="mb-4 text-center text-base text-white opacity-70 sm:text-left">
               Audited By
@@ -43,17 +43,14 @@ const Hero = () => {
                     className="h-6 w-auto"
                   />
                 </div>
-                <div className="flex h-full w-1/2 items-center justify-center gap-2 bg-[#463964] px-4 text-sm text-[#A88CD9]">
-                  <span>0xSDAF...k87a</span>
-                  <Copy className="h-10 w-10 cursor-pointer" />
-                </div>
+                <ContractAddress />
               </div>
             </div>
           </div>
           <ListedOnSwiper />
         </div>
 
-        {/*     <video
+        <video
           className="absolute bottom-[-10%] z-[-1] mx-auto w-full max-w-6xl scale-150 overflow-hidden rounded-br-4xl shadow-lg sm:right-[-20%] sm:bottom-[-60%] sm:scale-100"
           autoPlay
           loop
@@ -66,11 +63,16 @@ const Hero = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video> */}
+        </video>
         <Image
           src={Ellipse}
           alt="Ellipse"
-          className="absolute right-[-10%] bottom-0 z-0"
+          className="absolute right-[-10%] bottom-0 z-0 hidden sm:flex"
+        />
+        <Image
+          src={MobileImage}
+          alt="MobileImage"
+          className="absolute right-0 bottom-0 z-0 w-full sm:hidden"
         />
       </div>
     </section>

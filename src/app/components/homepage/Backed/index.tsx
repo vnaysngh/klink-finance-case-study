@@ -1,7 +1,7 @@
 "use client";
-import StatCounter from "@/app/components/homepage/Stats/StatsCounter";
-import PartnerGrid from "@/app/components/homepage/Partners/PartnerGrid";
-import Mission from "@/app/components/homepage/Mission/MissionGrid";
+import StatCounter from "@/app/components/homepage/stats/StatsCounter";
+import PartnerGrid from "@/app/components/homepage/partners/PartnerGrid";
+import Mission from "@/app/components/homepage/mission/MissionGrid";
 
 export default function Home() {
   return (

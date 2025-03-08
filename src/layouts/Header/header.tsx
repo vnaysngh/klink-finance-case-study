@@ -3,8 +3,8 @@ import Link from "next/link";
 import KlinkLogo from "@/assets/logos/klink-logo.svg";
 import Image from "next/image";
 import { useState } from "react";
-import Wallet from "@/app/components/homepage/Wallet/wallet";
-import { Price } from "@/app/components/homepage/KlinkPrice/price";
+import Wallet from "@/app/components/homepage/wallet/wallet";
+import { Price } from "@/app/components/homepage/klink-price/price";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

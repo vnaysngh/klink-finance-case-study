@@ -1,5 +1,5 @@
-import InvestorsSection from "./components/homepage/TrustedBy";
-import TrustedByTheBest from "./components/homepage/Backed";
+import InvestorsSection from "./components/homepage/trusted-by";
+import TrustedByTheBest from "./components/homepage/backed";
 import Hero from "./components/homepage/Hero/hero";
 
 export default function Page() {
