@@ -44,13 +44,16 @@ export default function Header() {
 
           {/* Navigation Links */}
           <nav className="hidden space-x-6 sm:flex">
-            <Link href="/" className="text-gray-300 hover:text-white">
+            <Link href="/" className="hover:text-klink-purple text-gray-300">
               Home
             </Link>
-            <Link href="/buy" className="text-gray-300 hover:text-white">
+            <Link href="/buy" className="hover:text-klink-purple text-gray-300">
               Buy SKLINK
             </Link>
-            <Link href="/stake" className="text-gray-300 hover:text-white">
+            <Link
+              href="/stake"
+              className="hover:text-klink-purple text-gray-300"
+            >
               Stake SKLINK
             </Link>
           </nav>
