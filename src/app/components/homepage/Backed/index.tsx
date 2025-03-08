@@ -2,6 +2,7 @@
 import StatCounter from "@/app/components/homepage/Stats/StatsCounter";
 import PartnerGrid from "@/app/components/homepage/Partners/PartnerGrid";
 import Mission from "@/app/components/homepage/Mission/MissionGrid";
+
 export default function Home() {
   return (
     <div className="bg-background mx-auto my-12 min-h-screen w-full max-w-6xl py-12">

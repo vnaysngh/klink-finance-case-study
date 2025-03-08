@@ -13,8 +13,18 @@ import Cointrust from "@/assets/logos/cointrust.png";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperCore } from "swiper/types";
-
 import { Navigation, Autoplay } from "swiper/modules";
+import BannerImage1 from "@/assets/banner/backed-banner-image-1.png";
+import MobileBannerImage1 from "@/assets/banner/mobile-backed-banner-image-1.png";
+import BannerImage2 from "@/assets/banner/backed-banner-image-2.png";
+import BannerImage3 from "@/assets/banner/backed-banner-image-3.png";
+import Twitter from "@/assets/socials/twitter.png";
+import Discord from "@/assets/socials/discord.png";
+import Telegram from "@/assets/socials/telegram.png";
+import Link3 from "@/assets/socials/link3.png";
+import Ellipse from "@/assets/banner/ellipse2.svg";
+import PolkaDots from "@/assets/banner/polkadots-white.svg";
+import Skewed from "@/assets/banner/skew.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -55,13 +65,23 @@ const InvestorsSection = () => {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, @Klinkfinance sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ncididunt ut labore et dolore magnaaliqua. ncididunt ut labore et dolore magna.",
       readUrl: "#",
     },
+    {
+      logo: CoinMarketCap,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, @Klinkfinance sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ncididunt ut labore et dolore magnaaliqua. ncididunt ut labore et dolore magna.",
+      readUrl: "#",
+    },
+    {
+      logo: Cointrust,
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, @Klinkfinance sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ncididunt ut labore et dolore magnaaliqua. ncididunt ut labore et dolore magna.",
+      readUrl: "#",
+    },
   ];
 
   return (
-    <div className="bg-primary my-12 rounded-4xl bg-gradient-to-b px-4 py-16 text-white">
-      <div className="mx-auto mb-20 max-w-6xl sm:mb-48">
-        <div className="mb-12 hidden items-center justify-between sm:flex">
-          <h2 className="text-left text-7xl font-extrabold italic">
+    <div className="bg-primary relative my-12 overflow-hidden bg-gradient-to-b px-4 py-20 text-white sm:rounded-4xl sm:py-32">
+      <div className="mx-auto mb-20 max-w-5xl sm:mb-48">
+        <div className="relative z-10 mb-12 hidden items-center justify-between sm:flex">
+          <h2 className="text-left text-6xl font-extrabold italic">
             Backed By <span className="text-klink-purple">The Best</span>
           </h2>
           <div className="hidden gap-2 sm:flex">
@@ -125,6 +145,7 @@ const InvestorsSection = () => {
             swiperRef.current = swiper;
           }}
           modules={[Navigation]}
+          className="relative z-10"
         >
           {investors.map((investor, index) => (
             <SwiperSlide key={index} className="flex w-3xl justify-center">
@@ -144,9 +165,9 @@ const InvestorsSection = () => {
         {/* </div> */}
       </div>
 
-      <div className="mx-auto mb-20 max-w-6xl">
+      <div className="mx-auto mb-20 max-w-5xl">
         <div className="mb-12 items-center justify-between sm:flex">
-          <h2 className="hidden text-7xl font-extrabold italic sm:block">
+          <h2 className="hidden text-6xl font-extrabold italic sm:block">
             Our <span className="text-klink-purple">Media & Partners</span>
           </h2>
           <div className="mb-12 sm:hidden">
@@ -165,17 +186,14 @@ const InvestorsSection = () => {
           </div>
         </div>
 
-        {/* <div className="mb-16 grid grid-cols-1 gap-8 sm:grid-cols-3"> */}
-        <div className="mb-16 w-full">
+        <div className="relative z-10 mb-16 w-full">
           <Swiper
             spaceBetween={20}
-            slidesPerView={1.25} // Default for mobile
+            slidesPerView={1.25}
             breakpoints={{
-              640: { slidesPerView: 2 }, // 2 cards on tablets
-              1024: { slidesPerView: 3 }, // 3 cards on larger screens
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
-            // pagination={{ clickable: true }}
-            // modules={[Pagination]}
           >
             {mediaPartners.map((partner, index) => (
               <SwiperSlide key={index} className="flex justify-center">
@@ -221,6 +239,7 @@ const InvestorsSection = () => {
             disableOnInteraction: false, // Keeps autoplay running after interaction
           }}
           modules={[Autoplay]}
+          className="mx-auto max-w-10/12"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index} className="h-full">
@@ -267,8 +286,8 @@ const InvestorsSection = () => {
         </Swiper>
       </div>
 
-      <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 hidden text-7xl font-extrabold italic sm:block">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="mb-12 hidden text-6xl font-extrabold italic sm:block">
           Join The{" "}
           <span className="text-klink-purple">
             Klink
@@ -284,42 +303,92 @@ const InvestorsSection = () => {
           </h2>
         </div>
 
-        <div className="flex w-full flex-col items-center sm:flex-row sm:items-center sm:justify-between">
+        <div className="relative z-999 flex w-full flex-col items-center sm:mb-32 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="mb-4 text-2xl font-extrabold whitespace-nowrap text-white sm:mb-0">
             Official Channels
           </h2>
 
           <div className="flex flex-col items-center gap-3 sm:flex-row">
-            <a
-              href="#"
+            <Link
+              href="https://x.com/klinkfinance"
+              target="_blank"
               className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
+              <Image src={Twitter} alt="twitter-logo" />
               Twitter <span className="text-klink-purple">250k</span>
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              href="https://discord.gg/klinkfinance"
+              target="_blank"
               className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
+              <Image src={Discord} alt="twitter-logo" />
               Telegram <span className="text-klink-purple">350k</span>
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              href="https://t.me/klinkfinance"
+              target="_blank"
               className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
+              <Image src={Telegram} alt="twitter-logo" />
               Discord <span className="text-klink-purple">100k</span>
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              href="https://link3.to/klinkfinance"
+              target="_blank"
               className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:opacity-80"
             >
+              <Image src={Link3} alt="twitter-logo" />
               Link3
-            </a>
+            </Link>
           </div>
         </div>
       </div>
+      <section>
+        <Image
+          src={BannerImage1}
+          alt="banner-image-1"
+          className="absolute top-[0] left-0 hidden w-full sm:flex"
+        />
+        <Image
+          src={MobileBannerImage1}
+          alt="banner-image-1"
+          className="absolute top-[0] left-0 flex w-full sm:hidden"
+        />
+        <Image
+          src={BannerImage2}
+          alt="banner-image-1"
+          className="absolute bottom-[0] left-0 z-0"
+        />
+        <Image
+          src={BannerImage3}
+          alt="banner-image-2"
+          className="absolute top-0 left-0"
+        />
+        <Image
+          src={Ellipse}
+          alt="banner-image-3"
+          className="absolute bottom-[0%] left-0 w-full"
+        />
+        <Image
+          src={PolkaDots}
+          alt="banner-image-3"
+          className="absolute top-[-20%] left-0 w-full"
+        />
+        <Image
+          src={PolkaDots}
+          alt="banner-image-3"
+          className="absolute bottom-[-20%] left-0 z-50 w-full"
+        />
+        <Image
+          src={Skewed}
+          alt="banner-image-3"
+          className="absolute bottom-0 left-0 z-[999] hidden sm:flex"
+        />
+      </section>
     </div>
   );
 };
