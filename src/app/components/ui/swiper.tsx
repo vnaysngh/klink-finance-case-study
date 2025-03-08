@@ -23,6 +23,14 @@ const logos = [
   Aerodrome,
   Coinmarketcap,
   Gecko,
+  Kucoin,
+  Gate,
+  BitPanda,
+  Uniswap,
+  Mexc,
+  Aerodrome,
+  Coinmarketcap,
+  Gecko,
 ];
 
 export default function ListedOnSwiper() {
@@ -38,8 +46,13 @@ export default function ListedOnSwiper() {
           1024: { slidesPerView: 8 }, // 5 on larger screens
         }}
         loop={true}
-        autoplay={{ delay: 2000 }}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+        }}
         modules={[Autoplay]}
+        speed={4000}
       >
         {logos.map((logo, index) => (
           <SwiperSlide key={index} className="flex justify-center">
