@@ -6,11 +6,14 @@ import { useState, useRef, useEffect } from "react";
 import Wallet from "@/app/components/homepage/wallet/wallet";
 import { Price } from "@/app/components/homepage/klink-price/price";
 import { motion, AnimatePresence, useDragControls } from "framer-motion";
+import { metaMask } from "wagmi/connectors";
+import { useDisconnect, useConnect, useAccount } from "wagmi";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [address, setAddress] = useState("0x1a2...3b4c");
-  const [isConnected, setIsConnected] = useState(false);
+  const { connect } = useConnect();
+  const { disconnect } = useDisconnect();
+  const account = useAccount();
   const sheetRef = useRef(null);
   const dragControls = useDragControls();
 
@@ -18,17 +21,6 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const connectWallet = () => {
-    setIsConnected(true);
-    setAddress("0x1a2...3b4c");
-  };
-
-  const disconnectWallet = () => {
-    setIsConnected(false);
-    setAddress("");
-  };
-
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (
@@ -106,14 +98,18 @@ export default function Header() {
         <div className="relative flex h-20 flex-1 items-center justify-between rounded-tr-4xl pr-6 pl-16">
           <div className="flex items-center space-x-3 sm:hidden">
             <div className="mr-1">
-              {isConnected ? (
-                <div className="bg-opacity-75 bg-klink-purple flex items-center space-x-2 rounded-full px-3 py-1.5 text-sm text-white backdrop-blur-sm">
-                  <span className="h-2 w-2 rounded-full bg-green-400"></span>
-                  <span>{address}</span>
+              {account.address ? (
+                <div
+                  onClick={() => disconnect()}
+                  className="bg-opacity-75 flex items-center space-x-2 rounded-full border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-3 py-1.5 text-sm text-white backdrop-blur-sm"
+                >
+                  <span>
+                    {`${account.address.slice(0, 3)}...${account.address.slice(-3)}`}
+                  </span>
                 </div>
               ) : (
                 <button
-                  onClick={connectWallet}
+                  onClick={() => connect({ connector: metaMask() })}
                   className="from-klink-purple rounded-full bg-gradient-to-r to-blue-700 px-4 py-1.5 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl"
                 >
                   Connect
@@ -245,7 +241,6 @@ export default function Header() {
                 </div>
               </motion.div>
 
-              {/* Navigation grid */}
               <motion.div variants={itemVariants} className="mb-6">
                 <div className="grid grid-cols-3 gap-2">
                   <NavLink href="/" label="Home" onClick={toggleMenu} />
@@ -254,34 +249,19 @@ export default function Header() {
                 </div>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="mb-4">
-                {!isConnected ? (
-                  <button
-                    onClick={connectWallet}
-                    className="w-full rounded-xl border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-6 py-4 font-semibold shadow-lg transition-all hover:shadow-xl active:translate-y-0.5"
-                  >
-                    Connect Wallet
+              <motion.div variants={itemVariants}>
+                <div className="grid grid-cols-2 gap-3">
+                  <button className="bg-opacity-40 rounded-xl border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] p-4 text-left backdrop-blur-sm">
+                    <p className="text-sm text-gray-300">Your Balance</p>
+                    <p className="text-xl font-bold text-white">
+                      25,000 $KLINK
+                    </p>
                   </button>
-                ) : (
-                  <div className="bg-opacity-40 bg-klink-purple rounded-xl p-4 backdrop-blur-sm">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm text-gray-300">
-                          Connected Wallet
-                        </p>
-                        <p className="font-mono text-lg font-medium text-white">
-                          {address}
-                        </p>
-                      </div>
-                      <button
-                        onClick={disconnectWallet}
-                        className="bg-opacity-50 rounded-lg bg-blue-700 px-3 py-1 text-sm text-white hover:bg-blue-700"
-                      >
-                        Disconnect
-                      </button>
-                    </div>
-                  </div>
-                )}
+                  <button className="bg-opacity-40 rounded-xl border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] p-4 text-left backdrop-blur-sm">
+                    <p className="text-sm text-gray-300">Staking Rewards</p>
+                    <p className="text-xl font-bold text-white">+125 $KLINK</p>
+                  </button>
+                </div>
               </motion.div>
             </div>
           </motion.div>
