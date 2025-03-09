@@ -3,7 +3,7 @@ import Image from "next/image";
 import Certik from "@/assets/logos/certik.svg";
 import Ellipse from "@/assets/banner/ellipse.svg";
 import MobileImage from "@/assets/banner/mobile-hero-image.png";
-import Header from "@/layouts/Header/header";
+import Header from "@/layouts/header/header";
 import ListedOnSwiper from "../../ui/swiper";
 import React, { useEffect, useState } from "react";
 import { ContractAddress } from "../contract-address/contract";
@@ -71,7 +71,7 @@ const Hero = () => {
           <ListedOnSwiper />
         </div>
 
-        <video
+        {/*  <video
           className="absolute bottom-[-10%] z-[-1] mx-auto w-full max-w-6xl scale-150 overflow-hidden rounded-br-4xl shadow-lg sm:right-[-20%] sm:bottom-[-60%] sm:scale-100"
           autoPlay
           loop
@@ -84,7 +84,7 @@ const Hero = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
 
         <Image
           src={Ellipse}
