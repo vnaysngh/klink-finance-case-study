@@ -9,12 +9,18 @@ import { motion, AnimatePresence, useDragControls } from "framer-motion";
 import { metaMask } from "wagmi/connectors";
 import { useDisconnect, useConnect, useAccount } from "wagmi";
 
+interface NavLinkProps {
+  href: string;
+  label: string;
+  onClick: () => void;
+}
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { connect } = useConnect();
   const { disconnect } = useDisconnect();
   const account = useAccount();
-  const sheetRef = useRef(null);
+  const sheetRef = useRef<HTMLDivElement>(null);
   const dragControls = useDragControls();
 
   const toggleMenu = () => {
@@ -22,9 +28,10 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         sheetRef.current &&
+        event.target instanceof Node &&
         !sheetRef.current.contains(event.target) &&
         isMenuOpen
       ) {
@@ -70,7 +77,7 @@ export default function Header() {
     open: { opacity: 1, y: 0 },
   };
 
-  const NavLink = ({ href, label, onClick }: any) => (
+  const NavLink = ({ href, label, onClick }: NavLinkProps) => (
     <motion.div variants={itemVariants}>
       <Link
         href={href}
@@ -81,10 +88,9 @@ export default function Header() {
       </Link>
     </motion.div>
   );
-
   return (
     <header className="relative">
-      <div className="relative z-20 mx-auto flex items-center">
+      <div className="relative z-20 mx-auto flex items-center justify-between lg:justify-end">
         <div className="relative z-10 flex h-20 items-center px-3 sm:pr-10 sm:pl-6">
           <Link href="/">
             <Image
@@ -95,8 +101,8 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="relative flex h-20 flex-1 items-center justify-between rounded-tr-4xl pr-6 pl-16">
-          <div className="flex items-center space-x-3 sm:hidden">
+        <div className="relative flex h-20 items-center justify-between rounded-tr-4xl pr-4 pl-4 md:pl-16 lg:flex-1">
+          <div className="flex items-center space-x-3 lg:hidden">
             <div className="mr-1">
               {account.address ? (
                 <div
@@ -148,8 +154,7 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden space-x-6 sm:flex">
+          <nav className="hidden space-x-6 lg:flex">
             <Link href="/" className="hover:text-klink-purple text-gray-300">
               Home
             </Link>
@@ -164,7 +169,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          <div className="hidden items-center space-x-6 sm:flex">
+          <div className="hidden items-center space-x-6 lg:flex">
             <Price />
             <Wallet />
           </div>
@@ -178,7 +183,7 @@ export default function Header() {
             animate={{ opacity: 0.6 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-10 bg-black backdrop-blur-sm sm:hidden"
+            className="fixed inset-0 z-10 bg-black backdrop-blur-sm lg:hidden"
             onClick={toggleMenu}
           />
         )}
@@ -188,7 +193,7 @@ export default function Header() {
         {isMenuOpen && (
           <motion.div
             ref={sheetRef}
-            className="fixed right-0 bottom-0 left-0 z-9999 overflow-hidden rounded-t-2xl bg-white shadow-2xl sm:hidden"
+            className="fixed right-0 bottom-0 left-0 z-9999 overflow-hidden rounded-t-2xl bg-white shadow-2xl lg:hidden"
             initial="closed"
             animate="open"
             exit="closed"
