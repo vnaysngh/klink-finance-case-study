@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Provider from "@/config/provider";
+import LenisProvider from "@/lenis";
 
 // Configure Inter font
 const inter = Inter({
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${inter.variable} antialiased`}>
-        <Provider>{children}</Provider>
+        <Provider>
+          <LenisProvider>{children}</LenisProvider>
+        </Provider>
       </body>
     </html>
   );
