@@ -4,16 +4,13 @@ import PartnerGrid from "@/app/components/homepage/partners/PartnerGrid";
 import Mission from "@/app/components/homepage/mission/MissionGrid";
 import Lottie from "lottie-react";
 
-// Import your Lottie animation - this is a placeholder
-// Replace with your actual Lottie JSON import
-import backgroundAnimation from "@/assets/lottie/btc-float.json";
+import backgroundAnimation from "@/assets/lottie/lazydoge.json";
 
 export default function Home() {
   return (
     <div className="relative overflow-hidden">
-      {/* Background Lottie animation with reduced opacity */}
       <div className="pointer-events-none absolute inset-0 left-0 h-full w-full">
-        <div className="opacity-30">
+        <div className="h-full opacity-5">
           <Lottie animationData={backgroundAnimation} loop={true} />
         </div>
       </div>

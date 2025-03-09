@@ -25,6 +25,11 @@ import Link3 from "@/assets/socials/link3.png";
 import Ellipse from "@/assets/banner/ellipse2.svg";
 import PolkaDots from "@/assets/banner/polkadots-white.svg";
 import Skewed from "@/assets/banner/skew.png";
+// import Lottie from "lottie-react";
+
+// // Import your Lottie animation - this is a placeholder
+// // Replace with your actual Lottie JSON import
+// import backgroundAnimation from "@/assets/lottie/lazydoge.json";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -78,7 +83,13 @@ const InvestorsSection = () => {
   ];
 
   return (
-    <div className="bg-primary relative my-12 overflow-hidden bg-gradient-to-b px-4 py-20 text-white sm:rounded-4xl sm:py-32">
+    <div className="bg-primary relative mb-12 overflow-hidden bg-gradient-to-b px-4 py-20 text-white sm:rounded-4xl sm:py-32">
+      {/*   <div className="pointer-events-none absolute inset-0 top-0 left-0 h-full w-full">
+        <div className="h-full opacity-30">
+          <Lottie animationData={backgroundAnimation} loop={true} />
+        </div>
+      </div>
+ */}
       <div className="mx-auto mb-20 max-w-5xl sm:mb-48">
         <div className="relative z-10 mb-12 hidden items-center justify-between sm:flex">
           <h2 className="text-left text-6xl font-extrabold italic">
