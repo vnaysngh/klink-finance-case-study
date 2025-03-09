@@ -5,20 +5,42 @@ import Ellipse from "@/assets/banner/ellipse.svg";
 import MobileImage from "@/assets/banner/mobile-hero-image.png";
 import Header from "@/layouts/Header/header";
 import ListedOnSwiper from "../../ui/swiper";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ContractAddress } from "../contract-address/contract";
+import Lottie, { LottieRef } from "lottie-react";
+import backgroundAnimation from "@/assets/lottie/crytpto-float.json";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const lottieRef: LottieRef = useRef(null);
 
   useEffect(() => {
     // Trigger animations after component mounts
     setIsLoaded(true);
   }, []);
 
+  // Use useEffect to set the speed when the component mounts
+  useEffect(() => {
+    if (lottieRef.current) {
+      // Set animation speed to 0.5 (or any value you prefer)
+      lottieRef.current.setSpeed(0.2);
+    }
+  }, []);
+
   return (
     <section>
       <div className="relative z-[999] min-h-[889px] overflow-hidden rounded-t-4xl rounded-b-4xl bg-[url('/assets/banner/mobile-hero.png')] bg-cover pb-6 text-white sm:min-h-[77vh] sm:bg-[url('/assets/banner/hero.png')]">
+        {/* Background Lottie animation with reduced opacity */}
+        <div className="pointer-events-none absolute inset-0 left-0 z-[-1] h-full w-full">
+          <div className="h-full opacity-10">
+            <Lottie
+              animationData={backgroundAnimation}
+              loop={true}
+              className="h-full w-full object-cover"
+              lottieRef={lottieRef}
+            />
+          </div>
+        </div>
         <Header />
         <div className="relative z-10 mx-auto flex flex-col items-center justify-between px-6 py-12 sm:flex-row sm:px-12">
           <div
