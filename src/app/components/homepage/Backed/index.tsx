@@ -9,7 +9,7 @@ import backgroundAnimation from "@/assets/lottie/lazydoge.json";
 export default function Home() {
   return (
     <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 left-0 h-full w-full">
+      <div className="pointer-events-none absolute inset-0 left-0 hidden h-full w-full sm:block">
         <div className="h-full opacity-5">
           <Lottie animationData={backgroundAnimation} loop={true} />
         </div>

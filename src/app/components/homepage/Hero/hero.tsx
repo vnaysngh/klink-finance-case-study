@@ -3,22 +3,40 @@ import Image from "next/image";
 import Certik from "@/assets/logos/certik.svg";
 import Ellipse from "@/assets/banner/ellipse.svg";
 import MobileImage from "@/assets/banner/mobile-hero-image.png";
-import Header from "@/layouts/header/header";
 import ListedOnSwiper from "../../ui/swiper";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ContractAddress } from "../contract-address/contract";
+import Lottie, { LottieRef } from "lottie-react";
+import backgroundAnimation from "@/assets/lottie/mining.json";
+import Header from "@/layouts/header/header";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const lottieRef: LottieRef = useRef(null);
 
   useEffect(() => {
-    // Trigger animations after component mounts
     setIsLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (lottieRef.current) {
+      lottieRef.current.setSpeed(0.2);
+    }
   }, []);
 
   return (
     <section>
       <div className="relative z-[999] min-h-[889px] overflow-hidden rounded-t-4xl rounded-b-4xl bg-[url('/assets/banner/mobile-hero.png')] bg-cover pb-6 text-white sm:min-h-[77vh] sm:bg-[url('/assets/banner/hero.png')]">
+        <div className="pointer-events-none absolute inset-0 left-[-25%] z-[-1] h-full w-full">
+          <div className="h-full opacity-5">
+            <Lottie
+              animationData={backgroundAnimation}
+              loop={true}
+              className="h-full w-full object-cover"
+              lottieRef={lottieRef}
+            />
+          </div>
+        </div>
         <Header />
         <div className="relative z-10 mx-auto flex flex-col items-center justify-between px-6 py-12 sm:flex-row sm:px-12">
           <div
@@ -71,7 +89,7 @@ const Hero = () => {
           <ListedOnSwiper />
         </div>
 
-        {/*  <video
+        <video
           className="absolute bottom-[-10%] z-[-1] mx-auto w-full max-w-6xl scale-150 overflow-hidden rounded-br-4xl shadow-lg sm:right-[-20%] sm:bottom-[-60%] sm:scale-100"
           autoPlay
           loop
@@ -84,7 +102,7 @@ const Hero = () => {
             type="video/mp4"
           />
           Your browser does not support the video tag.
-        </video> */}
+        </video>
 
         <Image
           src={Ellipse}
@@ -97,6 +115,34 @@ const Hero = () => {
           className={`absolute right-0 bottom-0 z-0 w-full transition-all duration-1000 sm:hidden ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
         />
       </div>
+
+      <style jsx global>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+
+        @keyframes shine {
+          0% {
+            background-position: -100% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+
+        .lottie-container svg {
+          width: 100%;
+          height: 100%;
+        }
+      `}</style>
     </section>
   );
 };

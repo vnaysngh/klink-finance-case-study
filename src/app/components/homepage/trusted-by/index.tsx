@@ -4,7 +4,7 @@ import Link from "next/link";
 import Castrum from "@/assets/logos/castrum.png";
 import Signum from "@/assets/logos/signum.svg";
 import Blockchain from "@/assets/logos/blockchain.png";
-import MasterVentures from "@/assets/logos/masterventures.png";
+import MasterVentures from "@/assets/logos/masterventures.svg";
 import Coindesk from "@/assets/logos/coindesk.svg";
 import Cointelegraph from "@/assets/logos/cointelegraph.png";
 import CoinMarketCap from "@/assets/logos/coinmarket.png";
@@ -149,13 +149,13 @@ const InvestorsSection = () => {
           {investors.map((investor, index) => (
             <SwiperSlide key={index} className="flex w-3xl justify-center">
               {/* Fixed width for the slide container */}
-              <div className="flex h-16 w-48 items-center justify-center">
+              <div className="flex h-16 w-48 items-center justify-center p-2">
                 <Image
                   src={investor.logo}
                   alt={investor.name}
-                  className="object-contain"
-                  width={192} // Set explicit width for the image
-                  height={64} // Set explicit height for the image
+                  className="object-contain opacity-60"
+                  width={192}
+                  height={64}
                 />
               </div>
             </SwiperSlide>
@@ -175,11 +175,11 @@ const InvestorsSection = () => {
               <span className="text-klink-purple">the Press</span>
             </h2>
           </div>
-          <div className="mb-6 flex gap-4">
-            <button className="rounded-full border border-purple-500 bg-transparent px-6 py-2 text-purple-500 transition-colors hover:bg-purple-500 hover:text-white">
+          <div className="mx-auto flex w-max rounded-full bg-[#312749] p-1">
+            <button className="px-6 py-2 text-lg font-semibold text-white transition-colors sm:px-14">
               Clients
             </button>
-            <button className="rounded-full border border-purple-500 bg-transparent px-6 py-2 text-purple-500 transition-colors hover:bg-purple-500 hover:text-white">
+            <button className="rounded-full bg-gradient-to-b from-[#674EFF] to-[#9583FF] px-6 py-4 text-lg font-semibold transition-colors sm:px-14">
               Press
             </button>
           </div>
