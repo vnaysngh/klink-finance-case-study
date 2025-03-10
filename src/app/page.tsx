@@ -23,12 +23,12 @@ const Mission = dynamic(() => import("./components/homepage/Mission/mission"), {
 
 const Page = () => {
   return (
-    <>
+    <section className="mx-auto max-w-[1600px]">
       <Hero />
       <Mission />
       <TrustedByTheBest />
       <Footer />
-    </>
+    </section>
   );
 };
 
