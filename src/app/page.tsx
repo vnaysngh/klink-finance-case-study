@@ -1,3 +1,4 @@
+"use client";
 import Footer from "@/layouts/footer";
 import Hero from "./components/homepage/hero";
 import TrustedByTheBest from "./components/homepage/trusted";
