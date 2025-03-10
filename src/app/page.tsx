@@ -1,7 +1,7 @@
 import InvestorsSection from "./components/homepage/trusted";
 import Hero from "./components/homepage/hero";
 import Footer from "@/layouts/footer";
-import TrustedByTheBest from "./components/homepage/trusted";
+import TrustedByTheBest from "./components/homepage/mission";
 
 export default function Page() {
   return (
