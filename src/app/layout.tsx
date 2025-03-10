@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Provider from "@/config/provider";
 import LenisProvider from "@/lenis";
+import "swiper/css";
+import "swiper/css/navigation";
 
 // Configure Inter font
 const inter = Inter({

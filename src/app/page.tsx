@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import InvestorsSection from "./components/homepage/trusted-by";
-import TrustedByTheBest from "./components/homepage/backed";
+import InvestorsSection from "./components/homepage/trusted";
+import TrustedByTheBest from "./components/homepage/mission";
 import Hero from "./components/homepage/hero";
 import Footer from "@/layouts/footer/footer";
 import Loader from "./loader";
