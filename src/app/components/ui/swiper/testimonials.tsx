@@ -21,6 +21,7 @@ export default function Testimonials() {
         }}
         modules={[Autoplay]}
         className="mx-auto max-w-10/12"
+        loop={true}
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className="h-full">

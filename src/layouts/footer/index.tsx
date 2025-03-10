@@ -20,7 +20,6 @@ const Footer = () => {
               <Link
                 key={index + 1}
                 href={project.link}
-                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-klink-purple block transform p-4 text-center font-extrabold text-black italic transition hover:scale-105 hover:rotate-1"
                 onMouseEnter={() => setHoveredIndex(index + 1)}

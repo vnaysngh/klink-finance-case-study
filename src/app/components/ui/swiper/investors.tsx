@@ -2,7 +2,7 @@
 import { investors } from "@/config/constants";
 import Image from "next/image";
 import React, { RefObject } from "react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper as SwiperCore } from "swiper/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,7 +21,12 @@ export default function Investors({
       onSwiper={(swiper) => {
         swiperRef.current = swiper;
       }}
-      modules={[Navigation]}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      modules={[Navigation, Autoplay]}
       className="relative z-10"
     >
       {investors.map((investor, index) => (

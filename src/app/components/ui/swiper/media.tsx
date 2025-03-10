@@ -3,6 +3,7 @@ import { mediaPartners } from "@/config/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function MediaPartners() {
@@ -15,6 +16,14 @@ export default function MediaPartners() {
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+        }}
+        modules={[Autoplay]}
+        speed={4000}
+        loop={true}
       >
         {mediaPartners.map((partner, index) => (
           <SwiperSlide key={index} className="flex justify-center">

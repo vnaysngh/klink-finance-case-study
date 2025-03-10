@@ -86,27 +86,27 @@ export const resources = [
   },
   {
     name: "Buy $SLINK",
-    link: "https://final01.notion.site/Platform-for-AI-apps-on-Everscale-f2ba21b09c49416dbd0804d099413a49",
+    link: "#",
     image: Person2,
   },
   {
     name: "Stake $KLINK",
-    link: "https://final01.notion.site/Secured-decentralized-codehosting-with-code-to-earn-mechanics-1ab64af4e92a493ab9c50d6d80c67e72",
+    link: "#",
     image: Person3,
   },
   {
     name: "KLINK Docs",
-    link: "https://final01.notion.site/3D-website-for-art-space-bar-and-restaurant-9ea7c87a553644bdbb2387c940c8dc38",
+    link: "#",
     image: Person4,
   },
   {
     name: "Media Kit",
-    link: "https://final01.notion.site/Interactive-walks-through-cities-of-Russia-Love-Letters-2cc2dda15a5d434fbc7950eeed11b563",
+    link: "#",
     image: Person5,
   },
   {
     name: "Link3",
-    link: "https://final01.notion.site/Automated-concierge-service-for-VIP-customers-128dc731efcd411a908556aba05b2d6b",
+    link: "#",
     image: Person6,
   },
 ];
