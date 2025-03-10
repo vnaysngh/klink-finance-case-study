@@ -3,7 +3,7 @@ import MissionGrid from "./MissionGrid";
 import { MissionLottie } from "../../ui/lotties";
 import StatCounter from "./StatsCounter";
 
-export default function Mission() {
+const Mission = () => {
   return (
     <div className="relative overflow-hidden">
       <MissionLottie />
@@ -23,4 +23,6 @@ export default function Mission() {
       </div>
     </div>
   );
-}
+};
+
+export default Mission;
