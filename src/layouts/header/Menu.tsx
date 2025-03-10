@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { metaMask } from "wagmi/connectors";
 import { Price } from "@/app/components/ui/cards/price";
 import Wallet from "@/app/components/homepage/hero/Wallet";
-import { useDisconnect, useConnect, useAccount } from "wagmi";
+import { useDisconnect, useConnect, useAccount, useChainId } from "wagmi";
 import Link from "next/link";
+import Image from "next/image";
+import { networkLogos } from "@/config/constants";
 
 export interface MenuProps {
   toggleMenu: () => void;
@@ -16,6 +18,8 @@ export default function Menu({ toggleMenu }: MenuProps) {
   const { connect } = useConnect();
   const { disconnect } = useDisconnect();
   const account = useAccount();
+  const chainId = useChainId();
+
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -30,6 +34,15 @@ export default function Menu({ toggleMenu }: MenuProps) {
         onClick={() => disconnect()}
         className="bg-opacity-75 border-gradient-primary to-gradient-tertiary from-gradient-secondary flex items-center space-x-2 rounded-full border bg-gradient-to-r px-3 py-1.5 text-sm text-white backdrop-blur-sm"
       >
+        {networkLogos[chainId ?? 1] && (
+          <Image
+            src={networkLogos[chainId ?? 1]}
+            alt="Network Logo"
+            width={20}
+            height={20}
+            className="h-5 w-5"
+          />
+        )}
         <span>{`${account.address.slice(0, 3)}...${account.address.slice(-3)}`}</span>
       </button>
     ) : (
