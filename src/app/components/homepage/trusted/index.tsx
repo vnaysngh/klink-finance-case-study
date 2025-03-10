@@ -1,20 +1,9 @@
-"use client";
 import React from "react";
 import Testimonials from "../../ui/swiper/testimonials";
 import { SparkLottie } from "../../ui/lotties";
-import dynamic from "next/dynamic";
-
-const Backed = dynamic(() => import("./Backed"), {
-  ssr: false,
-});
-
-const MediaIntro = dynamic(() => import("./MediaIntro"), {
-  ssr: false,
-});
-
-const SocialMedia = dynamic(() => import("./SocialMedia"), {
-  ssr: false,
-});
+import Backed from "./Backed";
+import MediaIntro from "./MediaIntro";
+import SocialMedia from "./SocialMedia";
 
 const TrustedByTheBest = () => {
   return (

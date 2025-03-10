@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Apps from "@/assets/logos/apps.png";
 
-export default function MissionSection() {
+export default function MissionGrid() {
   return (
     <div className="container mx-auto px-4 text-center sm:text-left">
       <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
