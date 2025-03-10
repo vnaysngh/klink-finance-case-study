@@ -1,3 +1,4 @@
+"use client";
 import { investors } from "@/config/constants";
 import Image from "next/image";
 import React, { RefObject } from "react";

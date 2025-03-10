@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Provider from "@/config/provider";
-import LenisProvider from "@/lenis";
 import "swiper/css";
 import "swiper/css/navigation";
+import LenisProvider from "@/config/lenisProvider";
 
 // Configure Inter font
 const inter = Inter({

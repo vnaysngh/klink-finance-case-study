@@ -1,3 +1,4 @@
+"use client";
 import { http, createConfig } from "wagmi";
 import { mainnet, sepolia } from "wagmi/chains";
 import { metaMask } from "wagmi/connectors";

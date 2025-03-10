@@ -1,3 +1,4 @@
+"use client"
 import { injected } from "wagmi/connectors";
 import { useDisconnect, useConnect, useAccount } from "wagmi";
 import { Power } from "lucide-react";
