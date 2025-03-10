@@ -1,7 +1,7 @@
-import TrustedByTheBest from "./components/homepage/trusted";
-import Hero from "./components/homepage/hero";
+import TrustedByTheBest from "./components/homepage/trusted/Trusted";
+import Hero from "./components/homepage/hero/Hero";
 import Footer from "@/layouts/footer";
-import Mission from "./components/homepage/mission";
+import Mission from "./components/homepage/mission/Mission";
 
 export default function Page() {
   return (
