@@ -40,9 +40,7 @@ function Wallet() {
               <Image
                 src={networkLogos[chainId ?? 1]}
                 alt="Network Logo"
-                width={20}
-                height={20}
-                className="h-5 w-5"
+                className="h-6 w-6 rounded-[50%] bg-white p-1"
               />
             )}
             {`${account.address.slice(0, 4)}...${account.address.slice(-4)}`}{" "}
