@@ -14,6 +14,8 @@ const Header = () => {
   };
 
   useEffect(() => {
+    if (typeof document === "undefined") return; // Protect against SSR
+
     if (!isMenuOpen) return;
 
     const handleClickOutside = (event: MouseEvent) => {
