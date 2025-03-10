@@ -8,7 +8,6 @@ import { partners } from "@/config/constants";
 export default function PartnerGrid() {
   return (
     <div className="my-8 w-full">
-      {/* Large screens - Normal Grid */}
       <div className="hidden grid-cols-5 items-center justify-items-center gap-4 sm:grid">
         {partners.map((partner, index) => (
           <motion.div
@@ -24,7 +23,6 @@ export default function PartnerGrid() {
         ))}
       </div>
 
-      {/* Mobile screens - Swiper */}
       <div className="sm:hidden">
         <Swiper
           modules={[EffectFade, Autoplay]}

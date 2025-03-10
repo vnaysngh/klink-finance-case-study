@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import LenisProvider from "@/config/lenisProvider";
 
-// Configure Inter font
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",

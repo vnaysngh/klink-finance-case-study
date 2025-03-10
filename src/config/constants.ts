@@ -11,12 +11,16 @@ import Coindesk from "@/assets/logos/coindesk.svg";
 import Cointelegraph from "@/assets/logos/cointelegraph.png";
 import CoinMarketCap from "@/assets/logos/coinmarket.png";
 import Cointrust from "@/assets/logos/cointrust.png";
+
+//footer images
 import Person1 from "@/assets/footer/image-1.svg";
 import Person2 from "@/assets/footer/image-2.svg";
 import Person3 from "@/assets/footer/image-3.svg";
 import Person4 from "@/assets/footer/image-4.svg";
 import Person5 from "@/assets/footer/image-5.svg";
 import Person6 from "@/assets/footer/image-6.svg";
+
+//social media
 import Twitter from "@/assets/socials/twitter.png";
 import Discord from "@/assets/socials/discord.png";
 import Telegram from "@/assets/socials/telegram.png";
