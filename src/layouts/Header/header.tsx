@@ -4,10 +4,10 @@ import KlinkLogo from "@/assets/logos/klink-logo.svg";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import Wallet from "@/app/components/homepage/wallet/wallet";
-import { Price } from "@/app/components/homepage/klink-price/price";
 import { motion, AnimatePresence, useDragControls } from "framer-motion";
 import { metaMask } from "wagmi/connectors";
 import { useDisconnect, useConnect, useAccount } from "wagmi";
+import { Price } from "@/app/components/ui/cards/price";
 
 interface NavLinkProps {
   href: string;
