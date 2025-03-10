@@ -2,22 +2,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { EffectFade, Autoplay } from "swiper/modules";
-import Binance from "@/assets/logos/binance.png";
-import Wirex from "@/assets/logos/wirex.png";
-import CryptoDotCom from "@/assets/logos/cryptodotcom.png";
-import Revolut from "@/assets/logos/revolut.png";
-import Nexo from "@/assets/logos/nexo.png";
-
-const partners = [
-  { icon: Binance, name: "Binance" },
-  { icon: Wirex, name: "Wirex" },
-  { icon: CryptoDotCom, name: "Crypto.com" },
-  { icon: Revolut, name: "Revolut" },
-  { icon: Nexo, name: "Nexo" },
-];
+import { partners } from "@/config/constants";
 
 export default function PartnerGrid() {
   return (

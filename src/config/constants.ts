@@ -1,3 +1,8 @@
+import Binance from "@/assets/logos/binance.png";
+import Wirex from "@/assets/logos/wirex.png";
+import CryptoDotCom from "@/assets/logos/cryptodotcom.png";
+import Revolut from "@/assets/logos/revolut.png";
+import Nexo from "@/assets/logos/nexo.png";
 import Castrum from "@/assets/logos/castrum.png";
 import Signum from "@/assets/logos/signum.svg";
 import Blockchain from "@/assets/logos/blockchain.png";
@@ -14,6 +19,14 @@ import Person5 from "@/assets/footer/image-5.svg";
 import Person6 from "@/assets/footer/image-6.svg";
 
 export const CONTRACT_ADDRESS = "0xdc5eb0fc6d3f64689290595ebe8943155ed4a73a";
+
+export const partners = [
+  { icon: Binance, name: "Binance" },
+  { icon: Wirex, name: "Wirex" },
+  { icon: CryptoDotCom, name: "Crypto.com" },
+  { icon: Revolut, name: "Revolut" },
+  { icon: Nexo, name: "Nexo" },
+];
 
 export const investors = [
   { name: "CASTRUM CAPITAL", logo: Castrum },
