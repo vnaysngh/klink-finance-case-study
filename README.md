@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 This app is built using Nextjs and Tailwind and uses wagmi to connect to metamask. 
 
-Deployed here on [`vercel`](klink-finance-case-study.vercel.app).
+Deployed here on [`Klink Finance Case Study).`](klink-finance-case-study.vercel.app).
 
 ## Getting Started
 
