@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import MobileMenu from "./MobileMenu";
 import Menu from "./Menu";
 import Logo from "./Logo";
@@ -13,9 +13,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
-    if (typeof document === "undefined") return; // Protect against SSR
-
+  useLayoutEffect(() => {
     if (!isMenuOpen) return;
 
     const handleClickOutside = (event: MouseEvent) => {
