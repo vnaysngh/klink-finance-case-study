@@ -5,7 +5,7 @@ import Certik from "@/assets/logos/certik.svg";
 
 export default function Audited() {
   return (
-    <div className="mx-auto mt-12 sm:px-12">
+    <div className="mx-auto sm:mt-20 sm:px-12">
       <p className="mb-4 text-center text-base text-white opacity-70 sm:text-left">
         Audited By
       </p>

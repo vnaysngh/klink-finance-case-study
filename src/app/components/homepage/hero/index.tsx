@@ -17,12 +17,16 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative z-[999] min-h-[889px] overflow-hidden rounded-t-4xl rounded-b-4xl bg-[url('/assets/banner/mobile-hero.png')] bg-cover pb-6 text-white sm:min-h-[100vh] sm:bg-[url('/assets/banner/hero.png')]">
+    <section className="relative z-[999] min-h-[889px] overflow-hidden rounded-t-4xl rounded-b-4xl bg-[url('/assets/banner/mobile-hero.png')] bg-cover text-white sm:min-h-[80vh] sm:bg-[url('/assets/banner/hero.png')] sm:pb-6">
       <Header />
       <HeroLottie />
       <TokenIntro isLoaded={isLoaded} />
-      <Audited />
-      <ListedExchange isLoaded={isLoaded} />
+      <div
+        className={`absolute bottom-10 z-50 w-full transition-all delay-700 duration-1000 sm:relative sm:bottom-5 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
+      >
+        <Audited />
+        <ListedExchange />
+      </div>
       <BackgroundMedia isLoaded={isLoaded} />
     </section>
   );

@@ -6,7 +6,6 @@ import MobileImage from "@/assets/banner/mobile-hero-image.png";
 export default function BackgroundMedia({ isLoaded }: { isLoaded: boolean }) {
   return (
     <>
-      {" "}
       <video
         className="absolute bottom-[-10%] z-[-1] mx-auto w-full max-w-6xl scale-150 overflow-hidden rounded-br-4xl shadow-lg sm:right-[-20%] sm:bottom-[-60%] sm:scale-100"
         autoPlay
