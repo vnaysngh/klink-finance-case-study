@@ -22,6 +22,18 @@ import Discord from "@/assets/socials/discord.png";
 import Telegram from "@/assets/socials/telegram.png";
 import Link3 from "@/assets/socials/link3.png";
 
+//crypto logos
+import Ethereum from "@/assets/logos/ethereum.png";
+import Base from "@/assets/logos/base.png";
+import Optimism from "@/assets/logos/optimism.png";
+import { StaticImageData } from "next/image";
+
+export const networkLogos: Record<number, StaticImageData> = {
+  1: Ethereum,
+  8453: Base,
+  10: Optimism,
+};
+
 export const CONTRACT_ADDRESS = "0xdc5eb0fc6d3f64689290595ebe8943155ed4a73a";
 
 export const partners = [

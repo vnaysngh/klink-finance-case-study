@@ -1,13 +1,17 @@
 "use client";
 import { injected } from "wagmi/connectors";
-import { useDisconnect, useConnect, useAccount } from "wagmi";
+import { useDisconnect, useConnect, useAccount, useChainId } from "wagmi";
 import { useState, useEffect } from "react";
 import { Power } from "lucide-react";
+import Image from "next/image";
+import { networkLogos } from "@/config/constants";
 
 function Wallet() {
   const { connect } = useConnect();
   const { disconnect } = useDisconnect();
   const account = useAccount();
+  const chainId = useChainId();
+
   const [isMetaMaskInstalled, setIsMetaMaskInstalled] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -32,6 +36,15 @@ function Wallet() {
             onClick={() => disconnect()}
             className="flex items-center justify-center gap-2"
           >
+            {networkLogos[chainId ?? 1] && (
+              <Image
+                src={networkLogos[chainId ?? 1]}
+                alt="Network Logo"
+                width={20}
+                height={20}
+                className="h-5 w-5"
+              />
+            )}
             {`${account.address.slice(0, 4)}...${account.address.slice(-4)}`}{" "}
             <Power height={16} width={16} />
           </div>
@@ -39,6 +52,7 @@ function Wallet() {
           <div onClick={handleConnect}>Connect Wallet</div>
         )}
       </div>
+
       {/* Popup for MetaMask not found */}
       {showPopup && (
         <div className="absolute top-12 left-1/2 w-64 -translate-x-1/2 transform rounded-md bg-white p-4 text-center shadow-lg">
