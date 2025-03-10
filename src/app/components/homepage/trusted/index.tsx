@@ -1,9 +1,19 @@
 import React from "react";
-import MediaIntro from "./MediaIntro";
 import Testimonials from "../../ui/swiper/testimonials";
-import Backed from "./Backed";
-import SocialMedia from "./SocialMedia";
 import { SparkLottie } from "../../ui/lotties";
+import dynamic from "next/dynamic";
+
+const Backed = dynamic(() => import("./Backed"), {
+  ssr: false,
+});
+
+const MediaIntro = dynamic(() => import("./MediaIntro"), {
+  ssr: false,
+});
+
+const SocialMedia = dynamic(() => import("./SocialMedia"), {
+  ssr: false,
+});
 
 const TrustedByTheBest = () => {
   return (

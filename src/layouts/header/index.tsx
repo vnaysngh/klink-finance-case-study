@@ -1,8 +1,15 @@
 "use client";
 import { useState, useRef, useLayoutEffect } from "react";
-import MobileMenu from "./MobileMenu";
-import Menu from "./Menu";
 import Logo from "./Logo";
+import dynamic from "next/dynamic";
+
+const Menu = dynamic(() => import("./Menu"), {
+  ssr: false,
+});
+
+const MobileMenu = dynamic(() => import("./MobileMenu"), {
+  ssr: false,
+});
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

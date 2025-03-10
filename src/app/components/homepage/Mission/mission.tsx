@@ -1,7 +1,16 @@
-import PartnerGrid from "./PartnerGrid";
-import MissionGrid from "./MissionGrid";
-import StatCounter from "./StatsCounter";
+import dynamic from "next/dynamic";
 import { MissionLottie } from "../../ui/lotties";
+const PartnerGrid = dynamic(() => import("./PartnerGrid"), {
+  ssr: false,
+});
+
+const MissionGrid = dynamic(() => import("./MissionGrid"), {
+  ssr: false,
+});
+
+const StatCounter = dynamic(() => import("./StatsCounter"), {
+  ssr: false,
+});
 
 const Mission = () => {
   return (
