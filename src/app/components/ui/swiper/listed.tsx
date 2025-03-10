@@ -40,10 +40,10 @@ export default function ListedOnSwiper() {
         $KLINK Listed On
       </p>
       <Swiper
-        slidesPerView={3.25} // Show 3.5 logos on mobile
+        slidesPerView={3.25}
         breakpoints={{
-          640: { slidesPerView: 8 }, // 4 on medium screens
-          1024: { slidesPerView: 8 }, // 5 on larger screens
+          640: { slidesPerView: 8 },
+          1024: { slidesPerView: 8 },
         }}
         loop={true}
         autoplay={{

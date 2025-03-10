@@ -10,13 +10,13 @@ export default function Testimonials() {
     <div className="mx-auto mb-20 max-w-5xl">
       <Swiper
         spaceBetween={10}
-        slidesPerView={1.1} // Default for mobile
+        slidesPerView={1.1}
         breakpoints={{
-          640: { slidesPerView: 2 }, // Show 2 slides on larger screens
+          640: { slidesPerView: 2 },
         }}
         autoplay={{
-          delay: 3000, // 3 sec delay per slide
-          disableOnInteraction: false, // Keeps autoplay running after interaction
+          delay: 3000,
+          disableOnInteraction: false,
         }}
         modules={[Autoplay]}
         className="mx-auto max-w-10/12"
