@@ -7,6 +7,10 @@ import ListedExchange from "./ListedExchange";
 import BackgroundMedia from "./BackgroundMedia";
 import Audited from "./Audited";
 
+export interface LoadedProps {
+  isLoaded: boolean;
+}
+
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -20,12 +24,9 @@ const Hero = () => {
         <Header />
         <HeroLottie />
         <TokenIntro isLoaded={isLoaded} />
-        <div
-          className={`absolute bottom-10 z-50 w-full transition-all delay-700 duration-1000 sm:relative sm:bottom-5 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
-        >
-          <Audited />
-          <ListedExchange />
-        </div>
+
+        <Audited isLoaded={isLoaded} />
+        <ListedExchange isLoaded={isLoaded} />
         <BackgroundMedia isLoaded={isLoaded} />
       </div>
     </section>

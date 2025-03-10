@@ -62,7 +62,7 @@ export default function MediaIntro() {
             Clients
           </motion.button>
           <motion.button
-            className="rounded-full bg-gradient-to-b from-[#674EFF] to-[#9583FF] px-6 py-4 text-lg font-semibold transition-colors sm:px-14"
+            className="from-gradient-secondary rounded-full bg-gradient-to-b to-[#9583FF] px-6 py-4 text-lg font-semibold transition-colors sm:px-14"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

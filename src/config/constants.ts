@@ -17,6 +17,10 @@ import Person3 from "@/assets/footer/image-3.svg";
 import Person4 from "@/assets/footer/image-4.svg";
 import Person5 from "@/assets/footer/image-5.svg";
 import Person6 from "@/assets/footer/image-6.svg";
+import Twitter from "@/assets/socials/twitter.png";
+import Discord from "@/assets/socials/discord.png";
+import Telegram from "@/assets/socials/telegram.png";
+import Link3 from "@/assets/socials/link3.png";
 
 export const CONTRACT_ADDRESS = "0xdc5eb0fc6d3f64689290595ebe8943155ed4a73a";
 
@@ -104,5 +108,31 @@ export const resources = [
     name: "Link3",
     link: "https://final01.notion.site/Automated-concierge-service-for-VIP-customers-128dc731efcd411a908556aba05b2d6b",
     image: Person6,
+  },
+];
+
+export const socialLinks = [
+  {
+    name: "Twitter",
+    url: "https://x.com/klinkfinance",
+    img: Twitter,
+    followers: "250k",
+  },
+  {
+    name: "Discord",
+    url: "https://discord.gg/klinkfinance",
+    img: Discord,
+    followers: "100k",
+  },
+  {
+    name: "Telegram",
+    url: "https://t.me/klinkfinance",
+    img: Telegram,
+    followers: "350k",
+  },
+  {
+    name: "Link3",
+    url: "https://link3.to/klinkfinance",
+    img: Link3,
   },
 ];

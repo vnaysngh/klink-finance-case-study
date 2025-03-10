@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { injected } from "wagmi/connectors";
 import { useDisconnect, useConnect, useAccount } from "wagmi";
 import { Power } from "lucide-react";
@@ -9,7 +9,7 @@ function Wallet() {
   const account = useAccount();
   return (
     <>
-      <div className="cursor-pointer rounded-[36px] border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-5 py-4 text-center text-white shadow-[inset_0px_1.15px_20.39px_rgba(255,255,255,0.4)]">
+      <div className="border-gradient-primary to-gradient-tertiary from-gradient-secondary cursor-pointer rounded-[36px] border bg-gradient-to-r px-5 py-4 text-center text-white shadow-[inset_0px_1.15px_20.39px_rgba(255,255,255,0.4)]">
         {account && account.address ? (
           <div
             onClick={() => disconnect()}

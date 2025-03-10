@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Ellipse from "@/assets/banner/ellipse.svg";
 import MobileImage from "@/assets/banner/mobile-hero-image.png";
+import { LoadedProps } from ".";
 
-export default function BackgroundMedia({ isLoaded }: { isLoaded: boolean }) {
+export default function BackgroundMedia({ isLoaded }: LoadedProps) {
   return (
     <>
       <video

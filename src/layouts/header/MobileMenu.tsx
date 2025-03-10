@@ -111,7 +111,7 @@ export default function MobileMenu({
               </div>
               <motion.div
                 variants={itemVariants}
-                className="mb-6 rounded-xl border-[#9A8AFE] bg-[#1E1E30] p-4 backdrop-blur-sm"
+                className="border-gradient-primary mb-6 rounded-xl bg-[#1E1E30] p-4 backdrop-blur-sm"
               >
                 <div className="flex items-center justify-between">
                   <div>
@@ -153,7 +153,7 @@ export default function MobileMenu({
                   {["Your Balance", "Staking Rewards"].map((text, index) => (
                     <button
                       key={text}
-                      className="bg-opacity-40 rounded-xl border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] p-4 text-left backdrop-blur-sm"
+                      className="bg-opacity-40 border-gradient-primary to-gradient-tertiary from-gradient-secondary rounded-xl border bg-gradient-to-r p-4 text-left backdrop-blur-sm"
                     >
                       <p className="text-sm text-gray-300">{text}</p>
                       <p className="text-xl font-bold text-white">

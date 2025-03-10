@@ -3,18 +3,14 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Twitter from "@/assets/socials/twitter.png";
-import Discord from "@/assets/socials/discord.png";
-import Telegram from "@/assets/socials/telegram.png";
-import Link3 from "@/assets/socials/link3.png";
 import { motion, useInView } from "framer-motion";
 import BackgroundMedia from "./BackgroundMedia";
+import { socialLinks } from "@/config/constants";
 
 export default function SocialMedia() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
-  // Animation variants for social links
   const socialContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -88,49 +84,21 @@ export default function SocialMedia() {
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
           >
-            <motion.div variants={socialItem}>
-              <Link
-                href="https://x.com/klinkfinance"
-                target="_blank"
-                className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:scale-105 hover:opacity-80"
-              >
-                <Image src={Twitter} alt="twitter-logo" />
-                Twitter <span className="text-klink-purple">250k</span>
-              </Link>
-            </motion.div>
-
-            <motion.div variants={socialItem}>
-              <Link
-                href="https://discord.gg/klinkfinance"
-                target="_blank"
-                className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:scale-105 hover:opacity-80"
-              >
-                <Image src={Discord} alt="twitter-logo" />
-                Telegram <span className="text-klink-purple">350k</span>
-              </Link>
-            </motion.div>
-
-            <motion.div variants={socialItem}>
-              <Link
-                href="https://t.me/klinkfinance"
-                target="_blank"
-                className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:scale-105 hover:opacity-80"
-              >
-                <Image src={Telegram} alt="twitter-logo" />
-                Discord <span className="text-klink-purple">100k</span>
-              </Link>
-            </motion.div>
-
-            <motion.div variants={socialItem}>
-              <Link
-                href="https://link3.to/klinkfinance"
-                target="_blank"
-                className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:scale-105 hover:opacity-80"
-              >
-                <Image src={Link3} alt="twitter-logo" />
-                Link3
-              </Link>
-            </motion.div>
+            {socialLinks.map(({ name, url, img, followers }) => (
+              <motion.div key={name} variants={socialItem}>
+                <Link
+                  href={url}
+                  target="_blank"
+                  className="flex w-fit items-center gap-2 rounded-full border border-[#ffffff1a] bg-gradient-to-b from-[#ffffff0d] to-[#ffffff05] px-4 py-2 font-semibold text-white transition hover:scale-105 hover:opacity-80"
+                >
+                  <Image src={img} alt={`${name}-logo`} />
+                  {name}{" "}
+                  {followers && (
+                    <span className="text-klink-purple">{followers}</span>
+                  )}
+                </Link>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>

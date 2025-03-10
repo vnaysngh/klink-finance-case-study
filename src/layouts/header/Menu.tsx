@@ -28,7 +28,7 @@ export default function Menu({ toggleMenu }: MenuProps) {
     return account?.address ? (
       <button
         onClick={() => disconnect()}
-        className="bg-opacity-75 flex items-center space-x-2 rounded-full border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-3 py-1.5 text-sm text-white backdrop-blur-sm"
+        className="bg-opacity-75 border-gradient-primary to-gradient-tertiary from-gradient-secondary flex items-center space-x-2 rounded-full border bg-gradient-to-r px-3 py-1.5 text-sm text-white backdrop-blur-sm"
       >
         <span>{`${account.address.slice(0, 3)}...${account.address.slice(-3)}`}</span>
       </button>
