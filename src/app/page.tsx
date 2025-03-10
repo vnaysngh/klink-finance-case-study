@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import InvestorsSection from "./components/homepage/trusted";
 import TrustedByTheBest from "./components/homepage/mission";
 import Hero from "./components/homepage/hero";
-import Footer from "@/layouts/footer/footer";
+import Footer from "@/layouts/footer";
 import Loader from "./loader";
 
 export default function Page() {
