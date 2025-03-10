@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Testimonials from "../../ui/swiper/testimonials";
 import { SparkLottie } from "../../ui/lotties";

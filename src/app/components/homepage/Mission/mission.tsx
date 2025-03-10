@@ -1,3 +1,4 @@
+"use client";
 import dynamic from "next/dynamic";
 import { MissionLottie } from "../../ui/lotties";
 const PartnerGrid = dynamic(() => import("./PartnerGrid"), {
