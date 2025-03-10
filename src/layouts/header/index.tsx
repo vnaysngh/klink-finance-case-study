@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Logo from "./Logo";
 import dynamic from "next/dynamic";
 
@@ -20,8 +20,8 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useLayoutEffect(() => {
-    if (!isMenuOpen) return;
+  useEffect(() => {
+    if (!isMenuOpen && typeof window !== undefined) return;
 
     const handleClickOutside = (event: MouseEvent) => {
       if (
