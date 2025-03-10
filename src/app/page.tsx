@@ -1,7 +1,7 @@
 import Footer from "@/layouts/footer";
 import Hero from "./components/homepage/hero";
-import Mission from "./components/homepage/mission";
 import TrustedByTheBest from "./components/homepage/trusted";
+import Mission from "./components/homepage/Mission/mission";
 
 const Page = () => {
   return (

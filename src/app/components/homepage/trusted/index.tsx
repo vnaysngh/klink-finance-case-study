@@ -1,3 +1,4 @@
+import React from "react";
 import MediaIntro from "./MediaIntro";
 import Testimonials from "../../ui/swiper/testimonials";
 import Backed from "./Backed";
