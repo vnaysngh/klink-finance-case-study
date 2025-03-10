@@ -1,8 +1,8 @@
 "use client";
-import StatCounter from "@/app/components/homepage/mission/StatsCounter";
-import PartnerGrid from "@/app/components/homepage/mission/PartnerGrid";
-import Mission from "@/app/components/homepage/mission/MissionGrid";
+import PartnerGrid from "./PartnerGrid";
+import MissionGrid from "./MissionGrid";
 import { MissionLottie } from "../../ui/lotties";
+import StatCounter from "./StatsCounter";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
           <div className="container mx-auto">
             <PartnerGrid />
             <StatCounter />
-            <Mission />
+            <MissionGrid />
           </div>
         </div>
       </div>
