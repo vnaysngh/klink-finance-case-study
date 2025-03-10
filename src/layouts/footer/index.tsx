@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { resources } from "@/config/constants";
 
-export default function Footer() {
+const Footer = () => {
   const [hoveredIndex, setHoveredIndex] = useState(0); // Default image index
 
   return (
@@ -44,4 +44,6 @@ export default function Footer() {
       </div>
     </div>
   );
-}
+};
+
+export default Footer;

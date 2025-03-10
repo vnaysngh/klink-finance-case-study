@@ -4,7 +4,7 @@ import MobileMenu from "./MobileMenu";
 import Menu from "./Menu";
 import Logo from "./Logo";
 
-export default function Header() {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const sheetRef = useRef<HTMLDivElement>(null);
@@ -43,4 +43,6 @@ export default function Header() {
       />
     </header>
   );
-}
+};
+
+export default Header;
