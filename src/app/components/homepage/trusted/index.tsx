@@ -18,13 +18,15 @@ const SocialMedia = dynamic(() => import("./SocialMedia"), {
 
 const TrustedByTheBest = () => {
   return (
-    <div className="bg-primary relative overflow-hidden bg-gradient-to-b px-4 py-20 text-white sm:rounded-4xl sm:py-32">
-      <SparkLottie />
-      <Backed />
-      <MediaIntro />
-      <Testimonials />
-      <SocialMedia />
-    </div>
+    <section className="p-0 sm:px-4">
+      <div className="bg-primary relative overflow-hidden bg-gradient-to-b px-4 py-20 text-white sm:rounded-4xl sm:py-32">
+        <SparkLottie />
+        <Backed />
+        <MediaIntro />
+        <Testimonials />
+        <SocialMedia />
+      </div>
+    </section>
   );
 };
 

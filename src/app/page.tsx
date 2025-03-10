@@ -1,35 +1,33 @@
 "use client";
 import Footer from "@/layouts/footer";
 import dynamic from "next/dynamic";
+import Loader from "./components/ui/loader";
 
 const Hero = dynamic(() => import("./components/homepage/hero"), {
   ssr: false,
+  loading: () => <Loader />,
 });
 
 const TrustedByTheBest = dynamic(
   () => import("./components/homepage/trusted"),
   {
     ssr: false,
+    loading: () => <Loader />,
   },
 );
 
-const Mission = dynamic(() => import("./components/homepage/Mission/mission"), {
+const Mission = dynamic(() => import("./components/homepage/mission"), {
   ssr: false,
+  loading: () => <Loader />,
 });
 
 const Page = () => {
   return (
     <>
-      <section className="mx-auto p-3 sm:pt-4">
-        <Hero />
-        <Mission />
-      </section>
-      <>
-        <section className="p-0 sm:px-4">
-          <TrustedByTheBest />
-        </section>
-        <Footer />
-      </>
+      <Hero />
+      <Mission />
+      <TrustedByTheBest />
+      <Footer />
     </>
   );
 };

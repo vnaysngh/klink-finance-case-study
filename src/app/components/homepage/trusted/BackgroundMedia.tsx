@@ -32,7 +32,7 @@ export default function BackgroundMedia() {
       <Image
         src={BannerImage3}
         alt="banner-image-4"
-        className="absolute top-0 left-0"
+        className="absolute top-0 left-0 z-0"
       />
       <Image
         src={Ellipse}
