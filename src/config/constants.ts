@@ -13,6 +13,8 @@ import Person4 from "@/assets/footer/image-4.svg";
 import Person5 from "@/assets/footer/image-5.svg";
 import Person6 from "@/assets/footer/image-6.svg";
 
+export const CONTRACT_ADDRESS = "0xdc5eb0fc6d3f64689290595ebe8943155ed4a73a";
+
 export const investors = [
   { name: "CASTRUM CAPITAL", logo: Castrum },
   {

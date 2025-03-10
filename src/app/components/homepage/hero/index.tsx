@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
-
 import Header from "@/layouts/header";
 import { HeroLottie } from "../../ui/lotties";
 import TokenIntro from "./TokenIntro";

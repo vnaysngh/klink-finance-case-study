@@ -14,28 +14,26 @@ export default function Header() {
   };
 
   useEffect(() => {
+    if (!isMenuOpen) return;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (
         sheetRef.current &&
-        event.target instanceof Node &&
-        !sheetRef.current.contains(event.target) &&
-        isMenuOpen
+        !sheetRef.current.contains(event.target as Node)
       ) {
         setIsMenuOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
   return (
     <header>
       <div className="relative z-20 mx-auto flex items-center justify-between lg:justify-end">
         <Logo />
-        <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Menu toggleMenu={toggleMenu} />
       </div>
       <MobileMenu
         isMenuOpen={isMenuOpen}

@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { CopyCheck, Copy } from "lucide-react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
-const CONTRACT_ADDRESS = "0xdc5eb0fc6d3f64689290595ebe8943155ed4a73a";
+import { CONTRACT_ADDRESS } from "@/config/constants";
 
 export function ContractAddress() {
   const [copied, setCopied] = useState(false);
