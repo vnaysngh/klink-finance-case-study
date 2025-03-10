@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (!isMenuOpen && typeof window !== undefined) return;
+    if (!isMenuOpen || typeof window === undefined) return;
 
     const handleClickOutside = (event: MouseEvent) => {
       if (
