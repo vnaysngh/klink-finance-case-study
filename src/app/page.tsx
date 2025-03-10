@@ -16,7 +16,7 @@ const TrustedByTheBest = dynamic(
   },
 );
 
-const Mission = dynamic(() => import("./components/homepage/mission/mission"), {
+const Mission = dynamic(() => import("./components/homepage/Mission/mission"), {
   ssr: false,
   loading: () => <Loader />,
 });
