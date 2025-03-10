@@ -1,9 +1,9 @@
-import TrustedByTheBest from "./components/homepage/trusted/Trusted";
-import Hero from "./components/homepage/hero/Hero";
 import Footer from "@/layouts/footer";
-import Mission from "./components/homepage/mission/Mission";
+import Hero from "./components/homepage/hero";
+import Mission from "./components/homepage/mission";
+import TrustedByTheBest from "./components/homepage/trusted";
 
-export default function Page() {
+const Page = () => {
   return (
     <>
       <section className="mx-auto p-3 sm:pt-4">
@@ -16,4 +16,6 @@ export default function Page() {
       <Footer />
     </>
   );
-}
+};
+
+export default Page;
