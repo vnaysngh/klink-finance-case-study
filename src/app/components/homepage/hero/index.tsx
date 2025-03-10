@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <section className="mx-auto p-3 sm:pt-4">
-      <div className="relative z-[999] min-h-[889px] overflow-hidden rounded-t-4xl rounded-b-4xl bg-[url('/assets/banner/mobile-hero.png')] bg-cover text-white sm:min-h-[80vh] sm:bg-[url('/assets/banner/hero.png')] sm:pb-6">
+      <div className="relative z-[999] min-h-[889px] overflow-hidden rounded-t-4xl rounded-b-4xl bg-[url('/assets/banner/mobile-hero.png')] bg-cover text-white sm:min-h-[77vh] sm:bg-[url('/assets/banner/hero.png')] sm:pb-6">
         <Header />
         <HeroLottie />
         <TokenIntro isLoaded={isLoaded} />
