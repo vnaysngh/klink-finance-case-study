@@ -1,13 +1,7 @@
 "use client";
-import Link from "next/link";
-import KlinkLogo from "@/assets/logos/klink-logo.svg";
-import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
-import Wallet from "@/app/components/homepage/wallet/wallet";
+import React, { RefObject } from "react";
 import { motion, AnimatePresence, useDragControls } from "framer-motion";
-import { metaMask } from "wagmi/connectors";
-import { useDisconnect, useConnect, useAccount } from "wagmi";
-import { Price } from "@/app/components/ui/cards/price";
+import Link from "next/link";
 
 interface NavLinkProps {
   href: string;
@@ -15,35 +9,18 @@ interface NavLinkProps {
   onClick: () => void;
 }
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { connect } = useConnect();
-  const { disconnect } = useDisconnect();
-  const account = useAccount();
-  const sheetRef = useRef<HTMLDivElement>(null);
+export default function MobileMenu({
+  isMenuOpen,
+  toggleMenu,
+  sheetRef,
+  setIsMenuOpen,
+}: {
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
+  sheetRef: RefObject<HTMLDivElement | null>;
+  setIsMenuOpen: (val: boolean) => void;
+}) {
   const dragControls = useDragControls();
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sheetRef.current &&
-        event.target instanceof Node &&
-        !sheetRef.current.contains(event.target) &&
-        isMenuOpen
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuOpen]);
 
   const menuVariants = {
     closed: {
@@ -88,94 +65,10 @@ export default function Header() {
       </Link>
     </motion.div>
   );
+
   return (
-    <header className="relative">
-      <div className="relative z-20 mx-auto flex items-center justify-between lg:justify-end">
-        <div className="relative z-10 flex h-20 items-center px-3 sm:pr-10 sm:pl-6">
-          <Link href="/">
-            <Image
-              src={KlinkLogo}
-              alt="Klink Logo"
-              className="h-7 w-auto sm:h-auto"
-            />
-          </Link>
-        </div>
-
-        <div className="relative flex h-20 items-center justify-between rounded-tr-4xl pr-4 pl-4 md:pl-16 lg:flex-1">
-          <div className="flex items-center space-x-3 lg:hidden">
-            <div className="mr-1">
-              {account.address ? (
-                <div
-                  onClick={() => disconnect()}
-                  className="bg-opacity-75 flex items-center space-x-2 rounded-full border border-[#9A8AFE] bg-gradient-to-r from-[#674EFF] to-[#714EBD] px-3 py-1.5 text-sm text-white backdrop-blur-sm"
-                >
-                  <span>
-                    {`${account.address.slice(0, 3)}...${account.address.slice(-3)}`}
-                  </span>
-                </div>
-              ) : (
-                <button
-                  onClick={() => connect({ connector: metaMask() })}
-                  className="from-klink-purple rounded-full bg-gradient-to-r to-blue-700 px-4 py-1.5 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl"
-                >
-                  Connect
-                </button>
-              )}
-            </div>
-
-            <button
-              className="bg-opacity-75 relative z-30 flex h-10 w-10 items-center justify-center rounded-full bg-[#55468B4D] text-gray-200 backdrop-blur-sm focus:outline-none"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              <div className="relative h-5 w-6">
-                <motion.span
-                  className="absolute top-0 left-0 h-0.5 w-6 bg-current"
-                  animate={{
-                    rotate: isMenuOpen ? 45 : 0,
-                    y: isMenuOpen ? 9 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.span
-                  className="absolute top-2 left-0 h-0.5 w-6 bg-current"
-                  animate={{ opacity: isMenuOpen ? 0 : 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.span
-                  className="absolute top-4 left-0 h-0.5 w-6 bg-current"
-                  animate={{
-                    rotate: isMenuOpen ? -45 : 0,
-                    y: isMenuOpen ? -9 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-              </div>
-            </button>
-          </div>
-
-          <nav className="hidden space-x-6 lg:flex">
-            <Link href="/" className="hover:text-klink-purple text-gray-300">
-              Home
-            </Link>
-            <Link href="/buy" className="hover:text-klink-purple text-gray-300">
-              Buy SKLINK
-            </Link>
-            <Link
-              href="/stake"
-              className="hover:text-klink-purple text-gray-300"
-            >
-              Stake SKLINK
-            </Link>
-          </nav>
-
-          <div className="hidden items-center space-x-6 lg:flex">
-            <Price />
-            <Wallet />
-          </div>
-        </div>
-      </div>
-
+    <>
+      {" "}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -188,7 +81,6 @@ export default function Header() {
           />
         )}
       </AnimatePresence>
-
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -272,6 +164,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

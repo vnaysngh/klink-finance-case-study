@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import Header from "@/layouts/header/header";
+import Header from "@/layouts/header";
 import { HeroLottie } from "../../ui/lotties";
 import TokenIntro from "./TokenIntro";
 import ListedExchange from "./ListedExchange";

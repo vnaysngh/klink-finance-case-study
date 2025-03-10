@@ -1,6 +1,6 @@
 import { investors } from "@/config/constants";
 import Image from "next/image";
-import React from "react";
+import React, { RefObject } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper as SwiperCore } from "swiper/types";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function Investors({
   swiperRef,
 }: {
-  swiperRef: React.RefObject<SwiperCore | null>;
+  swiperRef: RefObject<SwiperCore | null>;
 }) {
   return (
     <Swiper
