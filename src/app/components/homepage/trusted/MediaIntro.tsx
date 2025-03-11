@@ -1,14 +1,19 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import MediaPartners from "../../ui/swiper/media";
 import { motion, useInView } from "framer-motion";
 
 export default function MediaIntro() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  const [activeButton, setActiveButton] = useState("press");
+
+  const handleToggle = (button: string) => {
+    setActiveButton(button);
+  };
 
   return (
-    <div ref={sectionRef} className="mx-auto mb-20 max-w-5xl">
+    <div ref={sectionRef} className="relative z-1 mx-auto mb-20 max-w-5xl">
       <div className="mb-12 items-center justify-between sm:flex">
         <motion.h2
           className="hidden text-6xl font-extrabold italic sm:block"
@@ -47,24 +52,28 @@ export default function MediaIntro() {
         <motion.div
           className="mx-auto flex w-max rounded-full bg-[#312749] p-1"
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
-          animate={
-            isInView
-              ? { opacity: 1, y: 0, scale: 1 }
-              : { opacity: 0, y: 30, scale: 0.9 }
-          }
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.button
-            className="px-6 py-2 text-lg font-semibold text-white transition-colors sm:px-14"
-            whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+            className={`cursor-pointer px-6 py-2 text-lg font-semibold transition-colors sm:px-14 ${
+              activeButton === "clients"
+                ? "from-gradient-secondary rounded-full bg-gradient-to-b to-[#9583FF] py-4"
+                : "text-white"
+            }`}
             whileTap={{ scale: 0.95 }}
+            onClick={() => handleToggle("clients")}
           >
             Clients
           </motion.button>
           <motion.button
-            className="from-gradient-secondary rounded-full bg-gradient-to-b to-[#9583FF] px-6 py-4 text-lg font-semibold transition-colors sm:px-14"
-            whileHover={{ scale: 1.05 }}
+            className={`cursor-pointer px-6 text-lg font-semibold transition-colors sm:px-14 ${
+              activeButton === "press"
+                ? "from-gradient-secondary rounded-full bg-gradient-to-b to-[#9583FF] py-4"
+                : "py-2 text-white"
+            }`}
             whileTap={{ scale: 0.95 }}
+            onClick={() => handleToggle("press")}
           >
             Press
           </motion.button>
