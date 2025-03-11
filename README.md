@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Klink Finance Case Study
 
 This app is built using Nextjs and Tailwind and uses wagmi to connect to metamask. 
