@@ -2,7 +2,7 @@
 
 This app is built using Nextjs and Tailwind and uses wagmi to connect to metamask. 
 
-Deployed here on [`Klink Finance Case Study`](klink-finance-case-study.vercel.app).
+Deployed here on [`Klink Finance Case Study`](https://klink-finance-case-study.vercel.app).
 
 ## Getting Started
 
